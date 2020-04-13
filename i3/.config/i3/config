@@ -1,0 +1,463 @@
+#############################
+# i3 CONFIG
+# John Knowles
+#############################
+
+# Define Colors
+set_from_resource $fg i3wm.color7 #660000
+set_from_resource $bg i3wm.color2 #006600
+set_from_resource $c0 i3wm.color0 #000066
+set_from_resource $c1 i3wm.color1 #66FF66
+set_from_resource $c2 i3wm.color2 #FF6666
+set_from_resource $c3 i3wm.color3 #6666FF
+set_from_resource $c4 i3wm.color4 #36363F
+set_from_resource $c5 i3wm.color5 #363F36
+set_from_resource $c6 i3wm.color6 #3F3636
+set_from_resource $c7 i3wm.color7 #3F3F36
+set_from_resource $c8 i3wm.color8 #363F3F
+
+font pango: Hack Nerd Font Mono 10
+
+# Define the $mod key
+set $mod Mod4 
+
+# Define the movements keys - variables
+focus_follows_mouse no
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+# Define other variables
+set $term urxvt
+set $barbg #33393B00
+# Define workspaces
+set $ws1 "1:1"
+set $ws2 "2:2"
+set $ws3 "3:3"
+set $ws4 "4:4"
+set $ws5 "5:5"
+set $ws6 "6:6"
+set $ws7 "7:7"
+set $ws8 "8:8"
+set $ws9 "9:9"
+set $ws10 "10:0"
+
+# Assign workspaces to different monitors
+workspace $ws1 output DVI-I-1
+workspace $ws2 output HDMI-1
+workspace $ws3 output DVI-I-1
+workspace $ws4 output HDMI-1
+workspace $ws5 output DVI-I-1
+workspace $ws6 output HDMI-1
+workspace $ws7 output DVI-I-1
+workspace $ws8 output HDMI-1
+workspace $ws9 output DVI-I-1
+workspace $ws10 output HDMI-1
+
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+` move scratchpad
+# assign applications to workspaces (find class using xprop)
+#assign [class="Chromium-browser|Google-chrome"]                →    $ws1
+# assign [class="Caja"] $ws5
+# assign [class="XnView"] $ws7
+# assign [class="Gimp"] $ws8
+# assign [class="VirtualBox"] $ws9
+
+
+
+# Lock, logout, suspend, hibernate, reboot, shutdown
+# Press $mod (super) and X to exit - check toolbar for next choices
+bindsym $mod+shift+X mode "$mode_system"
+set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
+mode "$mode_system" {
+    bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
+    bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
+    bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Reload i3 Configuration
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Stop applications - kill focused window
+bindsym $mod+Shift+q kill
+
+# Moving around in i3
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Floating window min and max sizes
+floating_minimum_size 75 x 50
+floating_maximum_size 1920 x 980
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Moving around workspaces
+# next/previous workspace
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
+#navigate workspaces next / previous
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# Tiling parameters
+# orientation for new workspaces
+default_orientation horizontal
+
+# split in horizontal orientation
+bindsym $mod+shift+h split h
+
+# split in vertical orientation
+bindsym $mod+shift+v split v
+
+# enter fullscreen mode for the focused container
+# Super + F in archlabs is execute thunar
+bindsym $mod+shift+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# qwerty/azerty issue for letter z
+bindsym $mod+shift+s layout stacking
+bindsym $mod+shift+z layout tabbed
+bindsym $mod+shift+e layout toggle split
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+mod1+a focus parent
+
+# focus the child container
+bindsym $mod+mod1+d focus child
+
+# resize window (you can also use the mouse for that)
+bindsym control+shift+r mode "resize"
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# resize window using i3resize script
+bindsym $mod+shift+y exec --no-startup-id "bash ~/.config/i3/i3resize left"
+bindsym $mod+shift+u exec --no-startup-id "bash ~/.config/i3/i3resize down"
+bindsym $mod+shift+i exec --no-startup-id "bash ~/.config/i3/i3resize up"
+bindsym $mod+shift+o exec --no-startup-id "bash ~/.config/i3/i3resize right"
+
+# menu keybinding
+bindsym $mod+d exec $HOME/bin/rofi_pywal.sh
+
+# Lock screen
+# bindsym $mod+Shift+l exec ~/.config/i3/i3lock_color.sh
+
+# USER APPLICATIONS TO START AT BOOT
+# exec --no-startup-id wal -R
+# exec_always --no-startup-id $term feh --bg-scale --no-xinerama "$(< "${HOME}/.cache/wal/wal")"
+# exec --no-startup-id xautolock -time 5 -corners ---- -locker '. ~/.config/i3/i3lock_color.sh'
+# exec_always --no-startup-id ~/.fehbg &
+
+# TRAY APPLICATIONS
+# applications that are not installed will not start
+# you may see a wheel - hashtag out things you do not want
+#Authentication dialog
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+# network
+exec --no-startup-id nm-applet
+# num lock activated
+exec_always --no-startup-id numlockx on
+# dropbox
+exec --no-startup-id dropbox start
+
+# Application keyboard shortcuts
+# terminal
+bindsym $mod+Return exec --no-startup-id $term; focus
+bindsym $mod+h exec --no-startup-id $term -e htop; focus
+bindsym $mod+m exec --no-startup-id $term -e cmus; focus
+bindsym $mod+n exec --no-startup-id $term -e neomutt; focus
+bindsym $mod+r exec --no-startup-id $term -e ranger; focus
+# Chrome Browser
+bindsym $mod+c exec --no-startup-id google-chrome; focus
+# Caja File Manager
+bindsym $mod+control+c exec --no-startup-id caja --no-desktop --browser $HOME; focus
+bindsym $mod+control+t exec --no-startup-id thunar; focus
+# Firefox Browser
+bindsym $mod+f exec --no-startup-id firefox-esr; focus
+# Gimp 2.10
+bindsym $mod+g exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gimp-2.10 org.gimp.GIMP; focus
+# Oracle Virtual Box
+bindsym $mod+w exec --no-startup-id VirtualBox; focus
+# XnView
+bindsym $mod+p exec --no-startup-id xnview; focus
+# PDF Viewer
+bindsym $mod+control+p exec --no-startup-id atril; focus
+# Synaptic Package Manager
+bindsym $mod+s exec --no-startup-id synaptic-pkexec; focus
+#VLC Media Player
+bindsym $mod+v exec --no-startup-id vlc --started-from-file; focus
+# Screenshots
+bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/Screenshots/'
+# OBS Studio
+bindsym $mod+o exec --no-startup-id obs
+
+# L Keys - Mate Functions
+bindcode 156 exec --no-startup-id mate-control-center; focus
+bindcode 157 exec --no-startup-id mate-search-tool; focus
+bindcode 210 exec --no-startup-id mate-session-save --logout-dialog
+bindcode 211 exec --no-startup-id mate-session-save --shutdown-dialog
+
+# M Keys
+# Group 1: Edit config files
+bindcode 191 exec --no-startup-id $term -e vim /home/john/Dotfiles/i3/.config/i3/config; focus
+bindcode 192 exec --no-startup-id $term -e vim /home/john/Dotfiles/vim/.vimrc; focus
+bindcode 193 exec --no-startup-id $term -e vim /home/john/Dotfiles/zsh/.zshrc; focus
+bindcode 194 exec --no-startup-id $term -e vim /home/john/Dotfiles/xresources/.Xresources; focus
+
+# Group 2: Photo/Video
+bindcode 195 exec --no-startup-id xnview; focus
+bindcode 196 exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gimp-2.10 org.gimp.GIMP; focus
+bindcode 197 exec --no-startup-id blender; focus
+bindcode 198 exec --no-startup-id obs; focus
+
+# Group 3: Run scripts
+bindcode 201 exec --no-startup-id /home/john/bin/johnchart.sh
+bindcode $mod+201 exec --no-startup-id "/home/john/Projects/PrincipalScraper/principalscraper.py john"
+bindcode 202 exec --no-startup-id /home/john/bin/carlachart.sh
+bindcode $mod+202 exec --no-startup-id "/home/john/Projects/PrincipalScraper/principalscraper.py carla"
+
+# MX Keys
+# Column 1: Command line programs
+bindcode 179 exec --no-startup-id $term -e mysql -u root -p; focus
+bindcode 180 exec --no-startup-id $term -e R; focus
+bindcode 181 exec --no-startup-id $term -e ranger; focus
+bindcode 182 exec --no-startup-id $term -e htop; focus
+bindcode 183 exec --no-startup-id $term; focus
+
+# Colum 2: GUI programs
+bindcode 184 exec --no-startup-id simple-scan; focus
+bindcode 185 exec --no-startup-id anydesk; focus
+bindcode 186 exec --no-startup-id caja --no-desktop --browser $HOME; focus
+bindcode 187 exec --no-startup-id firefox; focus
+bindcode 188 exec --no-startup-id google-chrome; focus
+
+# Float or Tile Windows
+# floating enabled from some programs - find with xprop
+for_window [title="DarkSkyWeather"] floating enable move absolute position 3400 px 2 px
+# for_window [title="DarkSkyWeather"] floating enabled
+for_window [class="^Vlc$"] floating disable
+for_window [class="Xfburn"] floating disable
+# for_window [instance="gimp"] floating enable
+for_window [instance="script-fu"] border normal
+for_window [instance="variety"] floating disable
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+for_window [title="^Terminator Preferences$"] floating enable
+for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="setup"] floating enable
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+for_window [title="Win 10:"] floating enable
+# for_window [class="VirtualBox"] floating enable
+# bindsym $mod+u [instance="scratchpad"] scratchpad show; sticky enable
+# exec_always --no-startup-id $term -name scratchpad
+
+# Audio settings
+bindsym XF86AudioRaiseVolume exec--no-startup-id  amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+
+# Xbacklight
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease screen brightness
+
+# Toggle i3bar
+bindsym control+shift+b bar mode toggle
+
+# Borders
+# Border toggle
+hide_edge_borders none
+bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
+
+#changing border style
+#bindsym $mod+shift+t border normal
+#bindsym $mod+shift+y border pixel 2
+#bindsym $mod+shift+u border none
+new_window normal 2
+new_float normal 2
+# Popups during fullscreen mode
+popup_during_fullscreen smart
+
+# Font for window titles
+font pango:Hack Nerd Mono 10
+
+# i3 Gaps
+# Settings for I3 next gap git
+# https://github.com/Airblader/i3/tree/gaps-next
+# delete or uncomment the following lines if you do not have it or do not
+# want it
+
+for_window [class="^.*"] border pixel 2
+gaps inner 8
+gaps outer 2
+
+# i3 Gaps expand contract
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# i3 Compton
+exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# i3bar Appearance
+# bar {
+#
+   #tray_output none 
+   # height 25 strip_workspace_numbers yes    
+   # workspace_buttons yes
+   # font pango: Hack Nerd Font Mono 12
+   # position top
+
+##  status_command ~/.config/i3/start-conky-i3statusbar.sh
+
+# colors {
+        
+#       background  $barbg
+#       statusline  $c0
+#       separator   $c0
+#       #                   border  backgr. text     
+#       focused_workspace   $barbg $c1     $fg
+#       active_workspace    $barbg $c6     $fg
+#       inactive_workspace  $barbg $c6     $barbg
+#       urgent_workspace    $barbg $c2     $barbg
+#       }
+#
+#
+#   }
+
+
+# Windows decoration colors
+# class                     border  backgr. text    indica. childb.
+client.focused              $c4     $bg     $fg     $c1     $c4
+client.focused_inactive     $c6     $bg     $fg     $c6     $c6
+client.unfocused            $c6     $bg     $fg     $c6     $c6
+client.urgent               $c2     $bg     $fg     $c2     $c2
+client.placeholder          $c5     $bg     $fg     $c5     $c5
+
+client.background           $c1

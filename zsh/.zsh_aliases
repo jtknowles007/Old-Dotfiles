@@ -1,0 +1,28 @@
+# Static Named Directories
+hash -d wallpaper=/home/john/Pictures/Wallpaper
+hash -d wgums=/home/john/Documents/College/WGU/MSDA
+hash -d resume=/home/john/Documents/Resume/Awesome-CV/examples
+hash -d term1=/home/john/Documents/College/WGU/MSDA/Term01
+hash -d poly=/home/john/Dotfiles/polybar/.config/polybar
+hash -d i3=/home/john/i3/.config/i3
+hash -d prin=/home/john/Projects/PrincipalScraper
+hash -d sfta=/home/john/Projects/SFBulkTA
+
+# Aliases
+alias cls='clear'
+alias install='sudo apt install'
+alias remove='sudo apt remove'
+alias update='sudo apt update'
+alias upgrade='sudo apt udate && sudo apt upgrade'
+alias shutdown='sudo shutdown -h now'
+alias open='xdg-open'
+alias svim='sudo vim'
+alias hs='history | grep'
+alias rm='rm'
+
+alias cdpoly="cd ~/Dotfiles/polybar/.config/polybar/"
+alias cdi3="cd ~/Dotfiles/i3.config/i3/"
+alias cdprin="cd ~/Projects/PrincipalScraper/"
+alias cdsf="cd ~Projects/SFBulkTA"
+
+# Suffix Aliases
