@@ -13,7 +13,8 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon host user dir virtualenv pyenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history command_execution_time time)
