@@ -75,7 +75,7 @@ modules-left = i3
 modules-center = xwindow 
 modules-right =  dropbox weather date
 
-;tray-position =
+;tray-position = center
 
 ;wm-restack = i3
 ;override-redirect = true
