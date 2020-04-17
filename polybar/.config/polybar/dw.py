@@ -20,7 +20,7 @@ weatherdata = json.loads(weather.text)
 
 # Gather data elements from weather report that we're interested in seeing
 current = round(weatherdata['currently']['temperature'],1)
-symbol = ""
+symbol = "°F"
 condition = weatherdata['currently']['summary']
 
 # Get the weather icon code and match it to the corresponding weather font
@@ -40,4 +40,4 @@ icondict = {
     }
 
 # Display weather in Polybar 
-print("{} {}, {} {}".format(current,symbol,condition,icondict.get(icon,icondefault)))
+print("{} {} {}".format(current,symbol,icondict.get(icon,icondefault)))
