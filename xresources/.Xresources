@@ -49,3 +49,14 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:3
 URxvt.tabbed.tab-bg:0
 
+! Rofi Settings
+rofi.width: 25
+rofi.hide-scrollbar: true
+rofi.location: 0
+rofi.lines: 10
+rofi.sidebar-mode:true
+rofi.separator-style: solid
+rofi.bw: 3
+rofi.font: SauceCodePro Nerd Font Mono 12
+rofi.show-icons:true
+rofi.drun-icon-theme:Papirus
