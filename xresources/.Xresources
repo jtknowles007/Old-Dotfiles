@@ -23,9 +23,11 @@ URxvt*transparent: true
 URxvt*shading: 20
 
 ! Fonts & Spacing
-URxvt*font: xft:Hack Nerd Font Mono:style=Regular:pixelsize=14
-URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:pixelsize=14
-!URxvt*font: xft:Iosevka Nerd Font Mono:style=Regular:pixelsize=16
+! URxvt*font: xft:Hack Nerd Font Mono:style=Regular:pixelsize=14
+! URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:pixelsize=14
+URxvt*font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=16
+URxvt*boldFont: xft:SauceCodePro Nerd Font Mono:style=Bold:pixelsize=16
+!!URxvt*font: xft:Iosevka Nerd Font Mono:style=Regular:pixelsize=16
 !URxvt*boldFont: xft:Iosevka Nerd Font Mono:style=Bold:pixelsize=16
 URxvt*letterSpace: -1
 URxvt*lineSpacing: 0
