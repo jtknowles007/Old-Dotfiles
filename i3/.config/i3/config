@@ -16,7 +16,7 @@ set_from_resource $c6 i3wm.color6 #3F3636
 set_from_resource $c7 i3wm.color7 #3F3F36
 set_from_resource $c8 i3wm.color8 #363F3F
 
-font pango: Hack Nerd Font Mono 10
+font pango: Sauce Code Pro 10
 
 # Define the $mod key
 set $mod Mod4 
@@ -274,7 +274,7 @@ bindsym $mod+s exec --no-startup-id synaptic-pkexec; focus
 #VLC Media Player
 bindsym $mod+v exec --no-startup-id vlc --started-from-file; focus
 # Screenshots
-bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/Screenshots/'
+bindsym Print exec flameshot gui
 # OBS Studio
 bindsym $mod+o exec --no-startup-id obs
 
