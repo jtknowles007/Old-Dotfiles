@@ -23,6 +23,12 @@ my_color13  = ${xrdb:color13}
 my_color14  = ${xrdb:color14}
 my_color15  = ${xrdb:color15}
 
+[vars]
+margin = 0
+padding = 1
+i3padding = 1
+
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -31,8 +37,8 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
+margin-top = ${vars.margin}
+margin-bottom = ${vars.margin}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; BEGIN BAR #1               ;
@@ -59,11 +65,11 @@ line-color = ${colors.my_color4}
 border-size = 0 
 border-color = ${colors.my_color2}
 
-padding-left = 3
-padding-right = 3
+padding-left = ${vars.padding}
+padding-right = $vars.padding}
 
-module-margin-left = 3 
-module-margin-right = 3
+module-margin-left = ${vars.padding}
+module-margin-right = ${vars.padding}
 
 font-0 = "SauceCodePro Nerd Font:size=12;1"
 font-1 = "SauceCodePro Nerd Font:size=12;1"
@@ -105,18 +111,18 @@ line-color = ${colors.my_color4}
 border-size = 0 
 border-color = ${colors.my_color2}
 
-padding-left = 3
-padding-right = 3
+padding-left = ${vars.padding}
+padding-right = ${vars.padding}
 
-module-margin-left = 3 
-module-margin-right = 3
+module-margin-left = ${vars.padding}
+module-margin-right = ${vars.padding}
 
 font-0 = "SauceCodePro Nerd Font:size=12;1"
 font-1 = "SauceCodePro Nerd Font:size=12;1"
 font-2 = "Font Awesome 5 Free:style=Regular:size=10;1"
 font-3 = "Font Awesome 5 Brands:size=10;1"
 
-modules-left = cpu memory system-uptime-pretty temperature
+modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature
 modules-center = 
 modules-right = i3  
 
@@ -132,23 +138,23 @@ strip-wsnumbers = true
 label-unfocused-background = ${colors.my_background}
 label-unfocused-foreground = ${colors.my_foreground}
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = ${vars.i3padding}
 label-mode-background = ${colors.my_color4}
 label-focused = %index%
 label-focused-foreground = ${colors.my_foreground}
 label-focused-background = ${colors.my_background}
 label-focused-underline = ${colors.my_color4}
-label-focused-padding = 2
+label-focused-padding = ${vars.i3padding}
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = ${vars.i3padding}
 label-visible = %index%
 label-visible-underline = ${colors.my_foreground}
-label-visible-padding = 2 2 
+label-visible-padding = ${vars.i3padding}
 label-urgent = %index%
 label-urgent-foreground = ${colors.my_foreground}
 label-urgent-background = ${colors.my_background}
 label-urgent-underline = ${colors.my_color8}
-label-urgent-padding = 2
+label-urgent-padding = ${vars.i3padding}
 
 [module/memory]
 type = internal/memory
@@ -247,8 +253,8 @@ click-left = $HOME/.config/polybar/themechooser.sh
 [module/filesystem-home]
 type = internal/fs
 mount-0 = /home
-label-mounted = Home: %used%/%total%
-format-mounted-prefix = " "
+label-mounted = Home: %percentage_used%%
+format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.my_color6}
 interval = 10
 fixed-values = true
@@ -257,8 +263,8 @@ spacing = 1
 [module/filesystem-media]
 type = internal/fs
 mount-0 = /media/john/PhotoVideoMain
-label-mounted = PhotoVideoMain: %used%/%total%
-format-mounted-prefix = " "
+label-mounted = PhotoVideoMain: %percentage_used%%
+format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.my_color6}
 interval = 10
 fixed-values = true
