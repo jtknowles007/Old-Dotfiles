@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; General Settings           ;
+; Variables                  ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [colors]
@@ -28,6 +28,9 @@ margin = 0
 padding = 1
 i3padding = 1
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; General Settings           ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [settings]
 screenchange-reload = true
@@ -72,7 +75,7 @@ module-margin-left = ${vars.padding}
 module-margin-right = ${vars.padding}
 
 font-0 = "SauceCodePro Nerd Font:size=12;1"
-font-1 = "SauceCodePro Nerd Font:size=12;1"
+font-1 = "Hack Nerd Font:size=12;1"
 font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
@@ -118,7 +121,7 @@ module-margin-left = ${vars.padding}
 module-margin-right = ${vars.padding}
 
 font-0 = "SauceCodePro Nerd Font:size=12;1"
-font-1 = "SauceCodePro Nerd Font:size=12;1"
+font-1 = "Hack Nerd Font:size=12;1"
 font-2 = "Font Awesome 5 Free:style=Regular:size=10;1"
 font-3 = "Font Awesome 5 Brands:size=10;1"
 
@@ -130,6 +133,10 @@ modules-right = i3
 
 ;wm-restack = i3
 ;override-redirect = true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; BEGIN MODULES              ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/i3]
 type = internal/i3
