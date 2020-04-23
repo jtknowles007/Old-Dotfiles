@@ -142,21 +142,26 @@ modules-right = i3
 type = internal/i3
 pin-workspaces = true
 strip-wsnumbers = true
+
 label-unfocused-background = ${colors.my_background}
 label-unfocused-foreground = ${colors.my_foreground}
 label-mode = %mode%
 label-mode-padding = ${vars.i3padding}
 label-mode-background = ${colors.my_color4}
+
 label-focused = %index%
 label-focused-foreground = ${colors.my_foreground}
 label-focused-background = ${colors.my_background}
 label-focused-underline = ${colors.my_color4}
 label-focused-padding = ${vars.i3padding}
+
 label-unfocused = %index%
 label-unfocused-padding = ${vars.i3padding}
+
 label-visible = %index%
 label-visible-underline = ${colors.my_foreground}
 label-visible-padding = ${vars.i3padding}
+
 label-urgent = %index%
 label-urgent-foreground = ${colors.my_foreground}
 label-urgent-background = ${colors.my_background}
