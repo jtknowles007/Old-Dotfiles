@@ -4,11 +4,18 @@ import json
 import requests
 from credentials import darkkey
 
+# Read Pywal colors
+filepath = "/home/john/.cache/wal/colors.json"
+with open(filepath, encoding='utf-8-sig') as colorjson:
+    text = colorjson.read()
+    json_data = json.loads(text)
+thecolor = json_data['colors']['color6']
+
 # Find out where we are based on external IP address
 ipurl = "https://ipapi.co/json/"
 ip = requests.get(ipurl)
 ipdata = json.loads(ip.text)
-my_color6="#BA9447"
+
 # Gather data to pass to weather api
 lat = ipdata['latitude']
 long = ipdata['longitude']
@@ -40,4 +47,4 @@ icondict = {
     }
 
 # Display weather in Polybar 
-print("%{{F{}}} {}%{{F-}} {}{}".format(my_color6,icondict.get(icon,icondefault),current,symbol))
+print("%{{F{}}} {}%{{F-}} {}{}".format(thecolor,icondict.get(icon,icondefault),current,symbol))
