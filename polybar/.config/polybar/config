@@ -75,14 +75,14 @@ module-margin-left = ${vars.padding}
 module-margin-right = ${vars.padding}
 
 font-0 = "SauceCodePro Nerd Font:size=12;1"
-font-1 = "Hack Nerd Font:size=12;1"
+font-1 = "Font Awesome 5 Free Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;2"
-font-3 = "Font Awesome 5 Free:style=Regular:size=10;1"
+font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right =  dropbox weather date
+modules-right =  covid_tracker dropbox weather date
 
 ;tray-position = center
 
@@ -133,6 +133,12 @@ modules-right = i3
 
 ;wm-restack = i3
 ;override-redirect = true
+
+[bar/colorbar]
+color6 = ${colors.my_color4}
+color10 = ${colors.my_color10}
+color13 = ${colors.my_color13}
+color14 = ${colors.my_color14}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; BEGIN MODULES              ;
@@ -331,3 +337,12 @@ units = true
 label = %{T4}%{F#5F8A5D}%{F-}%{T-} %temperature-c%
 label-warn = %{T4}%{F#FF0000}%{F-}%{T-}WARNING - HIGH TEMP!(%temperature-c%)
 label-warn-foreground = #f00
+
+; ============================= ;
+;  CORONAVIRUS TRACKING MODULE  ;
+; ============================= ;
+
+[module/covid_tracker]
+type = custom/script
+exec = "$HOME/.config/polybar/covid.sh"
+interval = 600
