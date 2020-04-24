@@ -8,7 +8,7 @@ from credentials import darkkey
 ipurl = "https://ipapi.co/json/"
 ip = requests.get(ipurl)
 ipdata = json.loads(ip.text)
-
+my_color6="#BA9447"
 # Gather data to pass to weather api
 lat = ipdata['latitude']
 long = ipdata['longitude']
@@ -40,4 +40,4 @@ icondict = {
     }
 
 # Display weather in Polybar 
-print("{} {} {}".format(current,symbol,icondict.get(icon,icondefault)))
+print("%{{F{}}} {}%{{F-}} {}{}".format(my_color6,icondict.get(icon,icondefault),current,symbol))
