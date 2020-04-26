@@ -344,5 +344,5 @@ label-warn-foreground = #f00
 
 [module/covid_tracker]
 type = custom/script
-exec = "$HOME/.config/polybar/covid.py"
+exec = $HOME/.config/polybar/covid.py
 interval = 600
