@@ -44,7 +44,7 @@ margin-top = ${vars.margin}
 margin-bottom = ${vars.margin}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; BEGIN BAR #1               ;
+; PRIMARY BAR                ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/primary_bar]
@@ -90,7 +90,7 @@ modules-right =  covid_tracker dropbox weather date
 ;override-redirect = true
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; BEGIN BAR #2               ;
+; SECONDARY BAR              ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/secondary_bar]
@@ -134,6 +134,10 @@ modules-right = i3
 ;wm-restack = i3
 ;override-redirect = true
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; COLOR BAR                 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [bar/colorbar]
 color6 = ${colors.my_color4}
 color10 = ${colors.my_color10}
@@ -141,7 +145,7 @@ color13 = ${colors.my_color13}
 color14 = ${colors.my_color14}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; BEGIN MODULES              ;
+; INTERNAL MODULES           ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/i3]
@@ -236,37 +240,6 @@ type = internal/xwindow
 label = %title:0:50:...%
 label-padding = 10
 label-foreground = ${colors.my_color6}
-
-[module/system-uptime-pretty]
-type = custom/script
-;exec = $HOME/.config/polybar/system-uptime-pretty.sh
-exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
-interval = 30
-label = %output%
-format-prefix = " "
-format-prefix-foreground = ${colors.my_color6}
-
-[module/weather]
-type = custom/script
-exec = $HOME/.config/polybar/dw.py
-interval = 300
-label-font = 5
-click-left = $HOME/.config/polybar/dwdetails.py
-
-[module/dropbox]
-type = custom/script
-exec = dropbox status
-format-prefix = " "
-format-prefix-foreground = ${colors.my_color6}
-click-left = $HOME/.config/polybar/dropbox.sh
-
-[module/themechooser]
-type = custom/script
-exec = echo "Theme Chooser"
-format-prefix = " "
-format-prefix-foreground = ${colors.my_color6}
-click-left = $HOME/.config/polybar/themechooser.sh
-
 [module/filesystem-home]
 type = internal/fs
 mount-0 = /home
@@ -338,9 +311,39 @@ label = %{T4}%{F#5F8A5D}%{F-}%{T-} %temperature-c%
 label-warn = %{T4}%{F#FF0000}%{F-}%{T-}WARNING - HIGH TEMP!(%temperature-c%)
 label-warn-foreground = #f00
 
-; ============================= ;
-;  CORONAVIRUS TRACKING MODULE  ;
-; ============================= ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Custom Modules             ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/system-uptime-pretty]
+type = custom/script
+;exec = $HOME/.config/polybar/system-uptime-pretty.sh
+exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
+interval = 30
+label = %output%
+format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
+
+[module/weather]
+type = custom/script
+exec = $HOME/.config/polybar/dw.py
+interval = 300
+label-font = 5
+click-left = $HOME/.config/polybar/dwdetails.py
+
+[module/dropbox]
+type = custom/script
+exec = dropbox status
+format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
+click-left = $HOME/.config/polybar/dropbox.sh
+
+[module/themechooser]
+type = custom/script
+exec = echo "Theme Chooser"
+format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
+click-left = $HOME/.config/polybar/themechooser.sh
 
 [module/covid_tracker]
 type = custom/script
