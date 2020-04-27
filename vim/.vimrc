@@ -21,7 +21,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'mattn/calendar-vim'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'hdima/python-syntax'
-Plugin 'davidhalter/jedi-vim'
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
 
