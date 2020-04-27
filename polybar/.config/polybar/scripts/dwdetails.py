@@ -1,15 +1,16 @@
 #! /usr/bin/env python3
 
+#############################
+# Imports                   #
+#############################
+
 import tkinter as tk
-import polymodule as pm
 from tkinter import font
-from credentials import darkkey
-from credentials import locationiqkey
 from collections import OrderedDict
 
-
-
-
+import polymodule as pm
+from credentials import darkkey
+from credentials import locationiqkey
 
 symbol = "°F"
 # Find Latitude and Longitude based on URL
