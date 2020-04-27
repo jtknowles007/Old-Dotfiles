@@ -1,5 +1,8 @@
 #! /usr/bin/env python3
 
+# Adapted from HauctoPuce's Polybar Covid Tracker
+# github.com/HauctoPuce/polybar_covid_tracker
+
 import json
 import requests
 
