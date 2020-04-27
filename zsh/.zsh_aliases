@@ -1,7 +1,7 @@
 # Static Named Directories
 hash -d wallpaper=/home/john/Pictures/Wallpaper
 hash -d wgums=/home/john/Documents/College/WGU/MSDA
-hash -d resume=/home/john/Documents/Resume/Awesome-CV/examples
+hash -d resume=/home/john/Documents/Resume/Awesome-CV
 hash -d term1=/home/john/Documents/College/WGU/MSDA/Term01
 hash -d poly=/home/john/Dotfiles/polybar/.config/polybar
 hash -d i3=/home/john/i3/.config/i3
