@@ -317,7 +317,6 @@ label-warn-foreground = #f00
 
 [module/system-uptime-pretty]
 type = custom/script
-;exec = $HOME/.config/polybar/system-uptime-pretty.sh
 exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
 interval = 30
 label = %output%
@@ -326,26 +325,26 @@ format-prefix-foreground = ${colors.my_color6}
 
 [module/weather]
 type = custom/script
-exec = $HOME/.config/polybar/dw.py
+exec = $HOME/.config/polybar/scripts/dw.py
 interval = 300
 label-font = 5
-click-left = $HOME/.config/polybar/dwdetails.py
+click-left = $HOME/.config/polybar/scripts/dwdetails.py
 
 [module/dropbox]
 type = custom/script
 exec = dropbox status
 format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
-click-left = $HOME/.config/polybar/dropbox.sh
+click-left = $HOME/.config/polybar/scripts/dropbox.sh
 
 [module/themechooser]
 type = custom/script
 exec = echo "Theme Chooser"
 format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
-click-left = $HOME/.config/polybar/themechooser.sh
+click-left = $HOME/.config/polybar/scripts/themechooser.sh
 
 [module/covid_tracker]
 type = custom/script
-exec = $HOME/.config/polybar/covid.py
+exec = $HOME/.config/polybar/scripts/covid.py
 interval = 600
