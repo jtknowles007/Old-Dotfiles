@@ -7,6 +7,7 @@
 #############################
 
 import json
+import requests
 
 #############################
 # Functions                 #
@@ -29,3 +30,19 @@ def pycolors(color):
         pywalcolor = json.loads(pwc.read())
     colorvalue = pywalcolor['colors'][color]
     return colorvalue
+
+def getjson(url):
+    """
+    Get JSON data from web.
+    
+    Return JSON data from url passed to the function.
+
+    Parameters:
+    arg1(string): URL of JSON file.
+    
+    Returns:
+    jsondata(string): Dict of JSON data returned from URL.
+    """    
+    getdata = requests.get(url)
+    jsondata = json.loads(getdata.text)
+    return jsondata
