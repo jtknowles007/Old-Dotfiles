@@ -1,9 +1,15 @@
 #! /usr/bin/env python3
 
+"""Polymodule.py: Common functions for polybar scripts."""
+
+#############################
+# Imports                   #
+#############################
+
 import json
 
 #############################
-# Get Colors from Pywal     #
+# Functions                 #
 #############################
 
 def pycolors(color):
