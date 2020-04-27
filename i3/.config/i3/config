@@ -423,7 +423,7 @@ mode "$mode_gaps_outer" {
 exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
 
 # i3bar Appearance
 # bar {
