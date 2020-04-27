@@ -134,16 +134,6 @@ modules-right = i3
 ;wm-restack = i3
 ;override-redirect = true
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; COLOR BAR                 ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-[bar/colorbar]
-color6 = ${colors.my_color4}
-color10 = ${colors.my_color10}
-color13 = ${colors.my_color13}
-color14 = ${colors.my_color14}
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; INTERNAL MODULES           ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
