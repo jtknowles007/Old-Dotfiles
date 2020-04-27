@@ -1,38 +1,28 @@
 #! /usr/bin/env python3
 
-import json as js
-import requests as rq
 import tkinter as tk
+import polymodule as pm
 from tkinter import font
 from credentials import darkkey
 from credentials import locationiqkey
 from collections import OrderedDict
 
 
-def getip():
-    """Return the json output from ipapi.co IP address lookup API."""
-    ipurl = "https://ipapi.co/json/"
-    ip = rq.get(ipurl)
-    return js.loads(ip.text)
 
-def getlocation(locationkey,latitude,longitude):
-    """Return the json output from locationiq reverse geocoding lookup API."""
-    locationurl = "https://us1.locationiq.com/v1/search.php?key={}&q={},{}&format=json&statecode=1&addressdetails=1".format(locationkey,latitude,longitude)
-    loc = rq.get(locationurl)
-    return js.loads(loc.text)
 
-def getweather(apikey,latitude,longitude):
-    """Return the json output from Dark Sky weather API."""
-    weatherurl = "https://api.darksky.net/forecast/{}/{},{}".format(apikey,latitude,longitude)
-    weather = rq.get(weatherurl)
-    return js.loads(weather.text)
 
 symbol = "°F"
-ipdata = getip()
+# Find Latitude and Longitude based on URL
+ipurl = "https://ipapi.co/json/"
+ipdata = pm.getjson(ipurl)
 lat = ipdata['latitude']
 long = ipdata['longitude']
-locationdata = getlocation(locationiqkey,lat,long)
-weatherdata = getweather(darkkey,lat,long)
+
+#Find Location and Weather
+locationurl = "https://us1.locationiq.com/v1/search.php?key={}&q={},{}&format=json&statecode=1&addressdetails=1".format(locationiqkey,lat,long)
+weatherurl = "https://api.darksky.net/forecast/{}/{},{}".format(darkkey,lat,long)
+locationdata = pm.getjson(locationurl)
+weatherdata = pm.getjson(weatherurl)
 
 city = locationdata[0]['address']['city']
 state = locationdata[0]['address']['state_code']
