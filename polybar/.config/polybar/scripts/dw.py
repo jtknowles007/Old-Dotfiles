@@ -1,26 +1,20 @@
 #! /usr/bin/env python3
 
-import json
-import requests
 import polymodule as pm
 from credentials import darkkey
 
 #Assign colors from Pywal
 weathericoncolor = pm.pycolors('color6')
 
-# Find out where we are based on external IP address
+# Find Latitude and Longitude based on IP
 ipurl = "https://ipapi.co/json/"
-ip = requests.get(ipurl)
-ipdata = json.loads(ip.text)
-
-# Gather data to pass to weather api
+ipdata = pm.getjson(ipurl)
 lat = ipdata['latitude']
 long = ipdata['longitude']
-weatherurl = "https://api.darksky.net/forecast/{}/{},{}".format(darkkey,lat,long)
 
-# Find out the local weather
-weather = requests.get(weatherurl)
-weatherdata = json.loads(weather.text)
+# Find local weather
+weatherurl = "https://api.darksky.net/forecast/{}/{},{}".format(darkkey,lat,long)
+weatherdata = pm.getjson(weatherurl)
 
 # Gather data elements from weather report that we're interested in seeing
 current = round(weatherdata['currently']['temperature'],1)
@@ -28,7 +22,7 @@ symbol = "°F"
 condition = weatherdata['currently']['summary']
 
 # Get the weather icon code and match it to the corresponding weather font
-# unicode character from https://erikflowers.github.io/weather-icons/
+# unicode characters from https://erikflowers.github.io/weather-icons/
 icon = weatherdata['currently']['icon']
 icondefault = ""
 icondict = {
