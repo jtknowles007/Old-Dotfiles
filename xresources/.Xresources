@@ -1,14 +1,20 @@
 ! PYWAL Colors
 #include "/home/john/.cache/wal/colors.Xresources"
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! XFT                       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-! XFT Settings
 xft.dpi: 96
 xft.antialias: false
 xft.rgba: rgb
 xft.hinting: false
 
-! URxvt Settings
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! URxvt                     !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ! General
 URxvt*loginShell: true
 URxvt*scrollBar: false
@@ -18,7 +24,6 @@ URxvt*cursorBlink: true
 URxvt*buffered: true
 
 ! Transparency
-! URxvt*depth: 32
 URxvt*transparent: true
 URxvt*shading: 20
 
@@ -45,7 +50,10 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:3
 URxvt.tabbed.tab-bg:0
 
-! Rofi Settings
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Rofi                      !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 rofi.width: 25
 rofi.hide-scrollbar: true
 rofi.location: 0
