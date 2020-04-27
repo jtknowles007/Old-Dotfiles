@@ -2,14 +2,11 @@
 
 import json
 import requests
+import polymodule as pm
 from credentials import darkkey
 
-# Read Pywal colors
-filepath = "/home/john/.cache/wal/colors.json"
-with open(filepath, encoding='utf-8-sig') as colorjson:
-    text = colorjson.read()
-    json_data = json.loads(text)
-thecolor = json_data['colors']['color6']
+#Assign colors from Pywal
+weathericoncolor = pm.pycolors('color6')
 
 # Find out where we are based on external IP address
 ipurl = "https://ipapi.co/json/"
@@ -47,4 +44,4 @@ icondict = {
     }
 
 # Display weather in Polybar 
-print("%{{F{}}} {}%{{F-}} {}{}".format(thecolor,icondict.get(icon,icondefault),current,symbol))
+print("%{{F{}}} {}%{{F-}} {}{}".format(weathericoncolor,icondict.get(icon,icondefault),current,symbol))
