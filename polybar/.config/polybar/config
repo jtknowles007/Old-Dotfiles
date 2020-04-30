@@ -121,12 +121,11 @@ module-margin-left = ${vars.padding}
 module-margin-right = ${vars.padding}
 
 font-0 = "SauceCodePro Nerd Font:size=12;1"
-font-1 = "Font Awesome 5 Free Solid:size=10;1"
-font-2 = "Font Awesome 5 Brands:size=10;2"
-font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
-font-4 = "Weather Icons:size=10;1"
+font-1 = "Hack Nerd Font:size=12;1"
+font-2 = "Font Awesome 5 Free:style=Regular:size=10;1"
+font-3 = "Font Awesome 5 Brands:size=10;1"
 
-modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature xkcd
+modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature
 modules-center = 
 modules-right = i3  
 
@@ -339,9 +338,3 @@ click-left = $HOME/.config/polybar/scripts/themechooser.sh
 type = custom/script
 exec = $HOME/.config/polybar/scripts/covid.py
 interval = 600
-
-[module/xkcd]
-type = custom/script
-exec = $HOME/.config/polybar/scripts/xkcd.py
-interval = 43200
-click-left = $HOME/.config/polybar/scripts/xkcdshow.py
