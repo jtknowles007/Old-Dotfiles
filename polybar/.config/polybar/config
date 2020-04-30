@@ -127,7 +127,7 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature xkcd
+modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature xkcd music 
 modules-center = 
 modules-right = i3  
 
@@ -346,3 +346,11 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/xkcd.py
 interval = 600
 click-left = $HOME/.config/polybar/scripts/xkcdshow.py
+
+[module/music]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/mpc.sh
+tail = true
+interval = 0
+format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
