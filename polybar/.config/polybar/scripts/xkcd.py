@@ -9,9 +9,10 @@ url = "https://xkcd.com/info.0.json"
 xkcd = pm.getjson(url)
 title = xkcd['safe_title']
 image = xkcd['img']
+savename = '/home/john/.config/polybar/images/xkcd.png'
 
-if len(sys.argv) > 1:
-    imagefile = wget.download(image,'../images/xkcd.png')
+if sys.argv[1] =='-show':
+    imagefile = wget.download(image,savename)
     sg.theme('DarkAmber')
     layout = [[sg.Image(imagefile)],[sg.Button('Close')]]
 
