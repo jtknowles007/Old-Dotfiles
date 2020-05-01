@@ -12,7 +12,7 @@ image = xkcd['img']
 imagefile = wget.download(image)
 sg.theme('DarkAmber')
 layout = [[sg.Image(imagefile)],[sg.Button('Close')]]
-window = sg.Window('xkcd', layout, location=(0,0))
+window = sg.Window('xkcd_comic', layout, no_titlebar=True, location=(700,32))
 
 while True:
     event, values = window.read()
