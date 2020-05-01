@@ -144,7 +144,7 @@ modules-right = i3
 type = internal/i3
 pin-workspaces = true
 strip-wsnumbers = true
-
+enable-click = true
 label-mode = %mode%
 label-mode-background = ${colors.my_color4}
 label-mode-padding = ${vars.i3padding}
