@@ -1,4 +1,4 @@
 *.sw?
 __pycache__/
 credentials.py
-xkcd.png
+xkcd*.png
