@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 import os
-import sys
+import argparse
 import wget
 import PySimpleGUI as sg
 import polymodule as pm
@@ -12,7 +12,10 @@ title = xkcd['safe_title']
 image = xkcd['img']
 savename = '/home/john/.config/polybar/images/xkcd.png'
 
-if sys.argv[1] =='-show':
+parser = argparse.ArgumentParser()
+parser.add_argument("-s","--show",help="Download and display xkcd comic", action="store_true")
+args = parser.parse_args()
+if args.show:
     if os.path.exists(savename):
         os.remove(savename)
     imagefile = wget.download(image,savename)
