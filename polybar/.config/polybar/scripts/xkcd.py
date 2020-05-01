@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+import os
 import sys
 import wget
 import PySimpleGUI as sg
@@ -12,6 +13,8 @@ image = xkcd['img']
 savename = '/home/john/.config/polybar/images/xkcd.png'
 
 if sys.argv[1] =='-show':
+    if os.path.exists(savename):
+        os.remove(savename)
     imagefile = wget.download(image,savename)
     sg.theme('DarkAmber')
     layout = [[sg.Image(imagefile)],[sg.Button('Close')]]
