@@ -86,7 +86,7 @@ bindsym $mod+Shift+` move scratchpad
 # assign [class="XnView"] $ws7
 # assign [class="Gimp"] $ws8
 # assign [class="VirtualBox"] $ws9
-
+for_window [title="xkcd"] move container to output HDMI-1
 
 
 # Lock, logout, suspend, hibernate, reboot, shutdown
