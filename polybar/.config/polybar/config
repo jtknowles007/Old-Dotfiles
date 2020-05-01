@@ -350,6 +350,9 @@ click-left = $HOME/.config/polybar/scripts/xkcdshow.py
 [module/music]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/mpc.sh
+click-left = "mpc toggle"
+scroll-up = "mpc prev"
+scroll-down = "mpc next"
 tail = true
 interval = 0
 format-prefix = " "
