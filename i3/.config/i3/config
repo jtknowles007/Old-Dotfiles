@@ -86,8 +86,9 @@ bindsym $mod+Shift+` move scratchpad
 # assign [class="XnView"] $ws7
 # assign [class="Gimp"] $ws8
 # assign [class="VirtualBox"] $ws9
-for_window [title="xkcd"] move container to output HDMI-1
 
+# assign named windows to specific monitors
+for_window [title="xkcd_comic"] move container to output HDMI-1
 
 # Lock, logout, suspend, hibernate, reboot, shutdown
 # Press $mod (super) and X to exit - check toolbar for next choices
