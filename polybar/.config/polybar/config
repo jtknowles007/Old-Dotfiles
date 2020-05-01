@@ -343,9 +343,9 @@ interval = 600
 
 [module/xkcd]
 type = custom/script
-exec = $HOME/.config/polybar/scripts/xkcd.py -bar
+exec = $HOME/.config/polybar/scripts/xkcd.py
 interval = 600
-click-left = $HOME/.config/polybar/scripts/xkcd.py -show
+click-left = $HOME/.config/polybar/scripts/xkcd.py -s
 
 [module/music]
 type = custom/script
