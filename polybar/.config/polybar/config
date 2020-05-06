@@ -127,7 +127,7 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature xkcd music
+modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty temperature xkcd music pulseaudio
 modules-center = 
 modules-right = i3  
 
@@ -303,6 +303,24 @@ label = %{T4}%{F#5F8A5D}%{F-}%{T-} %temperature-c%
 label-warn = %{T4}%{F#FF0000}%{F-}%{T-}WARNING - HIGH TEMP!(%temperature-c%)
 label-warn-foreground = #f00
 
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_14.2.analog-stereo
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+label-font = 2
+label = "PAVU"
+label-muted = "MUTE"
+ramp-volume-0 = ▁
+ramp-volume-1 = ▂
+ramp-volume-2 = ▃
+ramp-volume-3 = ▄
+ramp-volume-4 = ▅
+ramp-volume-5 = ▆
+ramp-volume-6 = ▇
+ramp-volume-7 = █
+click-right = pavucontrol &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Custom Modules             ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
