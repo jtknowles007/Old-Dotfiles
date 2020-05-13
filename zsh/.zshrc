@@ -7,6 +7,7 @@
   export PATH=/home/john/Projects:$PATH
   export PATH=/home/john/bin:$PATH
   export PATH=/home/john/.local/bin:$PATH
+  export PATH=/opt/pycharm-community-2020.1/:$PATH
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
