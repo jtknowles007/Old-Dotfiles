@@ -82,7 +82,7 @@ font-4 = "Weather Icons:size=10;1"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right =  covid_tracker dropbox weather date
+modules-right =  xkcd ticker covid_tracker weather date
 
 ;tray-position = center
 
@@ -127,7 +127,7 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = filesystem-home filesystem-media cpu memory system-uptime-pretty network xkcd
+modules-left = cpu memory system-uptime-pretty network dropbox
 modules-center = 
 modules-right = i3  
 
@@ -375,4 +375,11 @@ scroll-down = "mpc next"
 tail = true
 interval = 0
 format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
+
+[module/ticker]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/ticker.py
+interval = 600
+format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
