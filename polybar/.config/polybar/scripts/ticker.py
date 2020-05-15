@@ -17,16 +17,10 @@ def stock(symbol):
     return [currentprice,symbol,diffprice]
 
 def main():
-    now = datetime.now().time()
     stocklist = ['^DJI','^IXIC']
-    if time(16,0) <= now <= time(9,30):
-        dji = stock(stocklist[0])
-        ndq = stock(stocklist[1])
-        print("{} DJIA: {:,} {}{:,} \
-            NASDAQ: {:,} {}{:,}\
-            ".format(now,dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
-    else:
-        print("Markets Closed")
+    dji = stock(stocklist[0])
+    ndq = stock(stocklist[1])
+    print("DJIA: {:,} {}{:,} NASDAQ: {:,} {}{:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
 
 if __name__ == "__main__":
     main()
