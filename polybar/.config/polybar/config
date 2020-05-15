@@ -81,8 +81,8 @@ font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
 modules-left = i3
-modules-center = xwindow 
-modules-right =  ticker covid_tracker weather date
+modules-center = 
+modules-right =  xkcd ticker covid_tracker dropbox weather date
 
 ;tray-position = center
 
@@ -127,7 +127,7 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = cpu memory system-uptime-pretty network dropbox
+modules-left = cpu memory system-uptime-pretty network
 modules-center = 
 modules-right = i3  
 
@@ -173,7 +173,7 @@ label-urgent-padding = ${vars.i3padding}
 type = internal/memory
 interval = 3
 format = <label> <ramp-used>
-label =%gb_used%/%gb_total%
+label =%percentage_used%%
 format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
 ramp-used-foreground = ${colors.my_color4}
@@ -286,11 +286,11 @@ udspeed-minwidth = 5
 accumulate-stats = true
 unknown-as-up = true
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.my_color6}
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
-label-connected =  %local_ip%  %downspeed:2%  %upspeed:2%
+label-connected =  %local_ip%
 
 [module/temperature]
 type = internal/temperature
