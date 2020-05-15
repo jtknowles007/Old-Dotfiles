@@ -82,7 +82,7 @@ font-4 = "Weather Icons:size=10;1"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right =  xkcd ticker covid_tracker weather date
+modules-right =  ticker covid_tracker weather date
 
 ;tray-position = center
 
