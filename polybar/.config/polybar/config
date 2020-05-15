@@ -380,6 +380,6 @@ format-prefix-foreground = ${colors.my_color6}
 [module/ticker]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/ticker.py
-interval = 600
+interval = 60
 format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
