@@ -6,8 +6,8 @@ def stock(symbol):
     lookup = yf.get_quote_table(symbol, dict_result=True)
     quoteprice = lookup['Quote Price']
     openprice = lookup['Previous Close']
-    currentprice = round(quoteprice,2)
-    diffprice = round(quoteprice - openprice,2)
+    currentprice = round(quoteprice)
+    diffprice = round(quoteprice - openprice)
     if diffprice >0:
         symbol = ''
     elif diffprice <0:
