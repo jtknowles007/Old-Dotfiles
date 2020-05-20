@@ -156,7 +156,3 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-function pretty_csv {
-    column -t -s, -n "$@" | less -F -S -X -K
-}
