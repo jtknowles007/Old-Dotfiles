@@ -37,6 +37,22 @@ set backspace=indent,eol,start
 set nolist
 set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 
+" Python & LaTex Indentation
+au BufNewFile,BufRead *.py,*.tex
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" Web Indentation
+au BufNewFile,BufRead *.js,*.html,*.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
 " UI CONFIG
 set ttimeoutlen=10
 set visualbell
