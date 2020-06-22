@@ -24,7 +24,7 @@ URxvt*cursorBlink: true
 URxvt*buffered: true
 
 ! Transparency
-URxvt*transparent: true
+URxvt*transparent: false
 URxvt*shading: 20
 
 ! Fonts & Spacing
