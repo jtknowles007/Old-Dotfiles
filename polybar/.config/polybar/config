@@ -82,7 +82,7 @@ font-4 = "Weather Icons:size=10;1"
 
 modules-left = i3
 modules-center = 
-modules-right =  xkcd ticker covid_tracker dropbox weather date
+modules-right =  xkcd ticker covid_tracker pulseaudio dropbox weather date
 
 ;tray-position = center
 
