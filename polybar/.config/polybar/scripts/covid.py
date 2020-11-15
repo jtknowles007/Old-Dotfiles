@@ -21,8 +21,10 @@ coviddata = json.loads(covid.text)
 country = extract_values(coviddata,'CountryCode')
 cases = extract_values(coviddata,'TotalConfirmed')
 deaths = extract_values(coviddata,'TotalDeaths')
-uscases = cases[-9]
-usdeaths = deaths[-9]
+
+#Get US Figures by indexing from the bottom of the list
+uscases = cases[-10]
+usdeaths = deaths[-10]
 
 #Display COVID-19 data in Polybar
 print("%{{F{} T4}}若%{{F- T-}} US: %{{F{}}} %{{F-}}{:,} %{{F{}}} %{{F-}}{:,}".format(virusiconcolor,positivecolor,uscases,deathscolor,usdeaths))
