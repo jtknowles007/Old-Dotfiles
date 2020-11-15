@@ -18,13 +18,19 @@ covidurl = "https://api.covid19api.com/summary"
 covid = requests.get(covidurl)
 coviddata = json.loads(covid.text)
 
+#Extract data into lists
 country = extract_values(coviddata,'CountryCode')
 cases = extract_values(coviddata,'TotalConfirmed')
 deaths = extract_values(coviddata,'TotalDeaths')
 
-#Get US Figures by indexing from the bottom of the list
-uscases = cases[-10]
-usdeaths = deaths[-10]
+#Remove worldwide total cases and deaths from respective lists
+cases = cases[1:]
+deaths = deaths[1:]
+
+#Extract US data
+usindex = country.index('US')
+uscases = cases[usindex]
+usdeaths = deaths[usindex]
 
 #Display COVID-19 data in Polybar
 print("%{{F{} T4}}若%{{F- T-}} US: %{{F{}}} %{{F-}}{:,} %{{F{}}} %{{F-}}{:,}".format(virusiconcolor,positivecolor,uscases,deathscolor,usdeaths))
