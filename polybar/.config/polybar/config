@@ -322,6 +322,7 @@ ramp-volume-5 = ▆
 ramp-volume-6 = ▇
 ramp-volume-7 = █
 click-right = pavucontrol &
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Custom Modules             ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
