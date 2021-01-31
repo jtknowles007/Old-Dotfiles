@@ -80,31 +80,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+` move scratchpad
-# assign applications to workspaces (find class using xprop)
-#assign [class="Chromium-browser|Google-chrome"]                →    $ws1
-# assign [class="Caja"] $ws5
-# assign [class="XnView"] $ws7
-# assign [class="Gimp"] $ws8
-# assign [class="VirtualBox"] $ws9
 
 # assign named windows to specific monitors
 for_window [title="xkcd_comic"] move container to output DVI-I-0
-
-# Lock, logout, suspend, hibernate, reboot, shutdown
-# Press $mod (super) and X to exit - check toolbar for next choices
-bindsym $mod+shift+X mode "$mode_system"
-set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
-mode "$mode_system" {
-    bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-    bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-    bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
 
 # Reload i3 Configuration
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -227,16 +205,6 @@ bindsym $mod+shift+o exec --no-startup-id "bash ~/.config/i3/i3resize right"
 # menu keybinding
 bindsym $mod+d exec $HOME/bin/rofi_pywal.sh
 
-# Lock screen
-# bindsym $mod+Shift+l exec ~/.config/i3/i3lock_color.sh
-
-# USER APPLICATIONS TO START AT BOOT
-# exec --no-startup-id wal -R
-# exec_always --no-startup-id $term feh --bg-scale --no-xinerama "$(< "${HOME}/.cache/wal/wal")"
-# exec --no-startup-id xautolock -time 5 -corners ---- -locker '. ~/.config/i3/i3lock_color.sh'
-# exec_always --no-startup-id ~/.fehbg &
-
-# TRAY APPLICATIONS
 # applications that are not installed will not start
 # you may see a wheel - hashtag out things you do not want
 #Authentication dialog
@@ -279,46 +247,6 @@ bindsym Print exec flameshot gui
 # OBS Studio
 bindsym $mod+o exec --no-startup-id obs
 
-# L Keys - Mate Functions
-bindcode 156 exec --no-startup-id mate-control-center; focus
-bindcode 157 exec --no-startup-id mate-search-tool; focus
-bindcode 210 exec --no-startup-id mate-session-save --logout-dialog
-bindcode 211 exec --no-startup-id mate-session-save --shutdown-dialog
-
-# M Keys
-# Group 1: Edit config files
-bindcode 191 exec --no-startup-id $term -e vim /home/john/Dotfiles/i3/.config/i3/config; focus
-bindcode 192 exec --no-startup-id $term -e vim /home/john/Dotfiles/vim/.vimrc; focus
-bindcode 193 exec --no-startup-id $term -e vim /home/john/Dotfiles/zsh/.zshrc; focus
-bindcode 194 exec --no-startup-id $term -e vim /home/john/Dotfiles/xresources/.Xresources; focus
-
-# Group 2: Photo/Video
-bindcode 195 exec --no-startup-id xnview; focus
-bindcode 196 exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gimp-2.10 org.gimp.GIMP; focus
-bindcode 197 exec --no-startup-id blender; focus
-bindcode 198 exec --no-startup-id obs; focus
-
-# Group 3: Run scripts
-bindcode 201 exec --no-startup-id /home/john/bin/johnchart.sh
-bindcode $mod+201 exec --no-startup-id "/home/john/Projects/PrincipalScraper/principalscraper.py john"
-bindcode 202 exec --no-startup-id /home/john/bin/carlachart.sh
-bindcode $mod+202 exec --no-startup-id "/home/john/Projects/PrincipalScraper/principalscraper.py carla"
-
-# MX Keys
-# Column 1: Command line programs
-bindcode 179 exec --no-startup-id $term -e mysql -u root -p; focus
-bindcode 180 exec --no-startup-id $term -e R; focus
-bindcode 181 exec --no-startup-id $term -e ranger; focus
-bindcode 182 exec --no-startup-id $term -e htop; focus
-bindcode 183 exec --no-startup-id $term; focus
-
-# Colum 2: GUI programs
-bindcode 184 exec --no-startup-id simple-scan; focus
-bindcode 185 exec --no-startup-id anydesk; focus
-bindcode 186 exec --no-startup-id caja --no-desktop --browser $HOME; focus
-bindcode 187 exec --no-startup-id firefox; focus
-bindcode 188 exec --no-startup-id google-chrome; focus
-
 # Float or Tile Windows
 # floating enabled from some programs - find with xprop
 for_window [title="DarkSkyWeather"] floating enable move absolute position 3400 px 2 px
@@ -343,27 +271,12 @@ for_window [title="Win 10:"] floating enable
 # bindsym $mod+u [instance="scratchpad"] scratchpad show; sticky enable
 # exec_always --no-startup-id $term -name scratchpad
 
-# Audio settings
-bindsym XF86AudioRaiseVolume exec--no-startup-id  amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
-
-# Xbacklight
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease screen brightness
-
-# Toggle i3bar
-bindsym control+shift+b bar mode toggle
-
 # Borders
 # Border toggle
 hide_edge_borders none
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
 #changing border style
-#bindsym $mod+shift+t border normal
-#bindsym $mod+shift+y border pixel 2
-#bindsym $mod+shift+u border none
 new_window normal 2
 new_float normal 2
 # Popups during fullscreen mode
@@ -425,33 +338,6 @@ exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
-
-# i3bar Appearance
-# bar {
-#
-   #tray_output none 
-   # height 25 strip_workspace_numbers yes    
-   # workspace_buttons yes
-   # font pango: Hack Nerd Font Mono 12
-   # position top
-
-##  status_command ~/.config/i3/start-conky-i3statusbar.sh
-
-# colors {
-        
-#       background  $barbg
-#       statusline  $c0
-#       separator   $c0
-#       #                   border  backgr. text     
-#       focused_workspace   $barbg $c1     $fg
-#       active_workspace    $barbg $c6     $fg
-#       inactive_workspace  $barbg $c6     $barbg
-#       urgent_workspace    $barbg $c2     $barbg
-#       }
-#
-#
-#   }
-
 
 # Windows decoration colors
 # class                     border  backgr. text    indica. childb.
