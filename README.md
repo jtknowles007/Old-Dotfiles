@@ -10,5 +10,3 @@ $ stow i3 polybar zsh (etc.)
 Here's a good resource for dotfiles on GitHub [dotfiles.github.io](http://dotfiles.github.io)
 
 John K.
----
----
