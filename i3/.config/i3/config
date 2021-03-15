@@ -31,6 +31,7 @@ set $right semicolon
 # Define other variables
 set $term urxvt
 set $barbg #33393B00
+
 # Define workspaces
 set $ws1 "1:1"
 set $ws2 "2:2"
