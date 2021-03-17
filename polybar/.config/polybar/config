@@ -289,12 +289,11 @@ format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.my_color6}
 format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.my_color6}
 format-disconnected = <label-disconnected>
 label-connected = %local_ip%
 label-disconnected = not connected
 label-disconnected-foreground = ${colors.my_color2}
-
-
 
 [module/temperature]
 type = internal/temperature
