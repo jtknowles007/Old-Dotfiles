@@ -127,7 +127,7 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = cpu memory system-uptime-pretty network
+modules-left = cpu memory system-uptime-pretty network inet
 modules-center = 
 modules-right = i3  
 
@@ -388,3 +388,12 @@ exec = $HOME/.config/polybar/scripts/ticker.py
 interval = 60
 format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
+
+[module/inet]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/inetconnect.py
+interval = 10
+format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
+
+
