@@ -290,15 +290,9 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.my_color6}
 format-disconnected-prefix = " "
 format-disconnected = <label-disconnected>
-format-packetloss = <animation-packetloss> <label-connected>
 label-connected = %local_ip%
 label-disconnected = not connected
 label-disconnected-foreground = ${colors.my_color2}
-animation-packetloss-0 =  ⚠
-animation-packetloss-0-foreground = $ffff00
-animation-packetloss-1 = 
-animation-packetloss-1-foreground = $FF0000
-animation-packetloss-framerate=500
 
 
 
