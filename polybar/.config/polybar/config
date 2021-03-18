@@ -391,8 +391,6 @@ format-prefix-foreground = ${colors.my_color6}
 [module/inet]
 type = custom/script
 exec = $HOME/.config/polybar/scripts/inetconnect.py
-interval = 1
+interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.my_color6}
-
-
