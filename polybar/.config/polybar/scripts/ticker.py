@@ -6,8 +6,12 @@ def stock(symbol):
     lookup = yf.get_quote_table(symbol, dict_result=True)
     quoteprice = lookup['Quote Price']
     openprice = lookup['Previous Close']
-    currentprice = round(quoteprice)
-    diffprice = round(quoteprice - openprice)
+    if quoteprice >=1:
+        currentprice = round(quoteprice)
+        diffprice = round(quoteprice - openprice)
+    else:
+        currentprice = round(quoteprice,3)
+        diffprice = round(quoteprice - openprice,3)
     if diffprice >0:
         symbol = ''
     elif diffprice <0:
@@ -17,10 +21,11 @@ def stock(symbol):
     return [currentprice,symbol,diffprice]
 
 def main():
-    stocklist = ['^DJI','^IXIC']
+    stocklist = ['^DJI','^IXIC','DOGE-USD']
     dji = stock(stocklist[0])
     ndq = stock(stocklist[1])
-    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
+    doge = stock(stocklist[2])
+    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} DOGECOIN: {:.3f} {} {:.3f}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],doge[0],doge[1],doge[2]))
 
 if __name__ == "__main__":
     main()
