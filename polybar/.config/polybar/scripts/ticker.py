@@ -25,7 +25,8 @@ def main():
     dji = stock(stocklist[0])
     ndq = stock(stocklist[1])
     doge = stock(stocklist[2])
-    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} DOGE: {:.3f} {} {:.3f}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],doge[0],doge[1],doge[2]))
+#    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} DOGE: {:.3f} {} {:.3f}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],doge[0],doge[1],doge[2]))
+    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
 
 if __name__ == "__main__":
     main()
