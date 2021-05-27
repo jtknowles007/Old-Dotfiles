@@ -21,12 +21,14 @@ def stock(symbol):
     return [currentprice,symbol,diffprice]
 
 def main():
-    stocklist = ['^DJI','^IXIC','DOGE-USD']
+    stocklist = ['^DJI','^IXIC','DOGE-USD','^GSPC']
     dji = stock(stocklist[0])
     ndq = stock(stocklist[1])
     doge = stock(stocklist[2])
-#    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} DOGE: {:.3f} {} {:.3f}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],doge[0],doge[1],doge[2]))
-    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
+    sp = stock(stocklist[3])
+
+    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} S&P 500: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],sp[0],sp[1],sp[2]))
+    # print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
 
 if __name__ == "__main__":
     main()
