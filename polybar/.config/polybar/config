@@ -82,7 +82,7 @@ font-4 = "Weather Icons:size=10;1"
 
 modules-left = i3
 modules-center = 
-modules-right =  xkcd ticker dropbox weather date
+modules-right =  dropbox weather date
 
 ;tray-position = center
 
