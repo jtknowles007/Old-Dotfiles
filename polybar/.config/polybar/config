@@ -48,8 +48,8 @@ margin-bottom = ${vars.margin}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/primary_bar]
-monitor = ${env:MONITOR:DVI-I-1}
-;monitor = DVI-I-1
+;monitor = ${env:MONITOR:DVI-I-1}
+monitor = DVI-I-0
 bottom = false
 width = 100%
 height = 20
@@ -80,8 +80,8 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = i3
-modules-center = 
+modules-left = jgmenu
+modules-center = i3
 modules-right =  dropbox weather date
 
 ;tray-position = center
@@ -94,8 +94,8 @@ modules-right =  dropbox weather date
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/secondary_bar]
-monitor = ${env:MONITOR:HDMI-1}
-;monitor = HDMI-1
+;monitor = ${env:MONITOR:HDMI-1}
+monitor = HDMI-0
 bottom = false
 width = 100%
 height = 20
@@ -128,8 +128,8 @@ font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
 modules-left = cpu memory system-uptime-pretty inet network
-modules-center = 
-modules-right = i3  
+modules-center = i3 
+modules-right =   
 
 ;tray-position = 
 
@@ -329,6 +329,14 @@ click-right = pavucontrol &
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Custom Modules             ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/jgmenu]
+type = custom/script
+interval = 120
+exec = echo "Kraken"
+click-left = $HOME/.config/polybar/scripts/jgmenu.sh
+format-prefix = " "
+format-prefix-foreground = ${colors.my_color6}
 
 [module/system-uptime-pretty]
 type = custom/script
