@@ -24,9 +24,9 @@ def main():
     stocklist = ['^DJI','^IXIC','^GSPC']
     dji = stock(stocklist[0])
     ndq = stock(stocklist[1])
-    sp5 = stock(stocklist[3])
+    sp5 = stock(stocklist[2])
 
-    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} S&P 500: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],sp[0],sp[1],sp[2]))
+    print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} S&P 500: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],sp5[0],sp5[1],sp5[2]))
 
 if __name__ == "__main__":
     main()
