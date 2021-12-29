@@ -1,11 +1,11 @@
 #! /usr/bin/env python3
 
 from datetime import datetime, time
-import yahoo_fin.stock_info as yf
+import yfinance as yf
 def stock(symbol):
-    lookup = yf.get_quote_table(symbol, dict_result=True)
-    quoteprice = lookup['Quote Price']
-    openprice = lookup['Previous Close']
+    lookup = yf.Ticker(symbol)
+    quoteprice = lookup.info['regularMarketPrice']
+    openprice = lookup.info['previousClose']
     if quoteprice >=1:
         currentprice = round(quoteprice)
         diffprice = round(quoteprice - openprice)
@@ -21,14 +21,12 @@ def stock(symbol):
     return [currentprice,symbol,diffprice]
 
 def main():
-    stocklist = ['^DJI','^IXIC','DOGE-USD','^GSPC']
+    stocklist = ['^DJI','^IXIC','^GSPC']
     dji = stock(stocklist[0])
     ndq = stock(stocklist[1])
-    doge = stock(stocklist[2])
     sp = stock(stocklist[3])
 
     print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,} S&P 500: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2],sp[0],sp[1],sp[2]))
-    # print("DJIA: {:,} {} {:,} NASDAQ: {:,} {} {:,}".format(dji[0],dji[1],dji[2],ndq[0],ndq[1],ndq[2]))
 
 if __name__ == "__main__":
     main()
