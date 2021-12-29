@@ -80,9 +80,9 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = jgmenu
-modules-center = i3
-modules-right =  dropbox weather date
+modules-left = i3
+modules-center = 
+modules-right =  ticker dropbox weather date
 
 ;tray-position = center
 
@@ -128,8 +128,8 @@ font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
 modules-left = cpu memory system-uptime-pretty inet network
-modules-center = i3 
-modules-right =   
+modules-center =  
+modules-right = i3  
 
 ;tray-position = 
 
