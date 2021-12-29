@@ -94,6 +94,9 @@ bindsym $mod+Shift+c reload
 # Stop applications - kill focused window
 bindsym $mod+Shift+q kill
 
+# Logout of Session
+bindsym $mod+Shift+Home exec --no-startup-id mate-session-save --logout-dialog
+
 # Moving around in i3
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -246,7 +249,7 @@ bindsym $mod+v exec --no-startup-id vlc --started-from-file; focus
 # Screenshots
 bindsym Print exec flameshot gui
 # OBS Studio
-bindsym $mod+o exec --no-startup-id obs
+#bindsym $mod+o exec --no-startup-id obs
 
 # Float or Tile Windows
 # floating enabled from some programs - find with xprop
