@@ -45,15 +45,15 @@ set $ws9 "9:9"
 set $ws10 "10:0"
 
 # Assign workspaces to different monitors
-workspace $ws1 output DVI-I-0
+workspace $ws1 output DVI-0
 workspace $ws2 output HDMI-0
-workspace $ws3 output DVI-I-0
+workspace $ws3 output DVI-0
 workspace $ws4 output HDMI-0
-workspace $ws5 output DVI-I-0
+workspace $ws5 output DVI-0
 workspace $ws6 output HDMI-0
-workspace $ws7 output DVI-I-0
+workspace $ws7 output DVI-0
 workspace $ws8 output HDMI-0
-workspace $ws9 output DVI-I-0
+workspace $ws9 output DVI-0
 workspace $ws10 output HDMI-0
 
 
