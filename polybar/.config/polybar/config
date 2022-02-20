@@ -49,7 +49,7 @@ margin-bottom = ${vars.margin}
 
 [bar/primary_bar]
 ;monitor = ${env:MONITOR:DVI-I-1}
-monitor = DVI-I-0
+monitor = DVI-0
 bottom = false
 width = 100%
 height = 20
