@@ -83,7 +83,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+` move scratchpad
 
 # assign named windows to specific monitors
-for_window [title="xkcd_comic"] move container to output DVI-I-0
+for_window [title="xkcd_comic"] move container to output DVI-0
 
 # Reload i3 Configuration
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -220,26 +220,32 @@ exec_always --no-startup-id numlockx on
 # dropbox
 exec --no-startup-id dropbox start
 
+################################
 # Application keyboard shortcuts
-# terminal
+# ##############################
+
+# terminals
 bindsym $mod+Return exec --no-startup-id $term; focus
 bindsym $mod+h exec --no-startup-id $term -e htop; focus
 bindsym $mod+m exec --no-startup-id $term -e cmus; focus
 bindsym $mod+n exec --no-startup-id $term -e neomutt; focus
 bindsym $mod+r exec --no-startup-id $term -e ranger; focus
-# Chrome Browser
+
+# Web Browsers
 bindsym $mod+c exec --no-startup-id google-chrome; focus
-# Caja File Manager
+bindsym $mod+f exec --no-startup-id firefox-esr; focus
+
+# File Managers
 bindsym $mod+control+c exec --no-startup-id caja --no-desktop --browser $HOME; focus
 bindsym $mod+control+t exec --no-startup-id thunar; focus
-# Firefox Browser
-bindsym $mod+f exec --no-startup-id firefox-esr; focus
-# Gimp 2.10
+
+# Graphics
 bindsym $mod+g exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gimp-2.10 org.gimp.GIMP; focus
+bindsym $mod+b exec --no-startup-id /home/john/bin/blender3/blender; focus
+bindsym $mod+p exec --no-startup-id xnview; focus
+
 # Oracle Virtual Box
 bindsym $mod+w exec --no-startup-id VirtualBox; focus
-# XnView
-bindsym $mod+p exec --no-startup-id xnview; focus
 # PDF Viewer
 bindsym $mod+control+p exec --no-startup-id atril; focus
 # Synaptic Package Manager
