@@ -137,6 +137,53 @@ modules-right = i3
 ;override-redirect = true
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; TERTIARY BAR               ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bar/tertiary_bar]
+;monitor = ${env:MONITOR:DVI-I-1}
+monitor = DisplayPort-0
+bottom = false
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+
+separator = 
+background = ${colors.my_background}
+foreground =  ${colors.my_foreground}
+
+line-size = 2.5
+line-color = ${colors.my_color4}
+
+border-size = 0 
+border-color = ${colors.my_color2}
+
+padding-left = ${vars.padding}
+padding-right = $vars.padding}
+
+module-margin-left = ${vars.padding}
+module-margin-right = ${vars.padding}
+
+font-0 = "SauceCodePro Nerd Font:size=12;1"
+font-1 = "Font Awesome 5 Free Solid:size=10;1"
+font-2 = "Font Awesome 5 Brands:size=10;2"
+font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
+font-4 = "Weather Icons:size=10;1"
+
+modules-left = i3
+modules-center = 
+modules-right = 
+
+;tray-position = center
+
+;wm-restack = i3
+;override-redirect = true
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; INTERNAL MODULES           ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
