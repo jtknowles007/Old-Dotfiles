@@ -141,7 +141,6 @@ modules-right = i3
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/tertiary_bar]
-;monitor = ${env:MONITOR:DVI-I-1}
 monitor = DisplayPort-0
 bottom = false
 width = 100%
@@ -173,8 +172,8 @@ font-2 = "Font Awesome 5 Brands:size=10;2"
 font-3 = "Font Awesome 5 Free Regular:style=Regular:size=10;1"
 font-4 = "Weather Icons:size=10;1"
 
-modules-left = i3
-modules-center = 
+modules-left = 
+modules-center = i3
 modules-right = 
 
 ;tray-position = center
