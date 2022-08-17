@@ -11,8 +11,8 @@ theurl = "http://www.msftncsi.com/ncsi.txt"
 #thedowncolor = pm.pycolors('color2')
 
 # New Conky Version
-theupicon = "${font Font Awesome 6 Free Solid:size=11}${color 009900} ${color 4F4F4F}${font} "
-thedownicon = "$font Font Awesome 6 Free Solid:size=11}${color 990000} ${color 4f4f4f}{$font}"
+theupicon = "${font Font Awesome 6 Free Solid:size=11}${color 009900}${color 4F4F4F}${font}"
+thedownicon = "$font Font Awesome 6 Free Solid:size=11}${color 990000}${color 4f4f4f}{$font}"
 
 
 therequest = urllib.request.Request(theurl)
