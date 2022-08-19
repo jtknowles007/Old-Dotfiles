@@ -1,5 +1,5 @@
 ! PYWAL Colors
-#include "/home/john/.cache/wal/colors.Xresources"
+!#include "/home/john/.cache/wal/colors.Xresources"
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! XFT                       !
@@ -9,7 +9,6 @@ xft.dpi: 96
 xft.antialias: false
 xft.rgba: rgb
 xft.hinting: false
-
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! URxvt                     !
@@ -28,8 +27,8 @@ URxvt*transparent: false
 URxvt*shading: 20
 
 ! Fonts & Spacing
-URxvt*font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=16
-URxvt*boldFont: xft:SauceCodePro Nerd Font Mono:style=Bold:pixelsize=16
+URxvt*font: xft:FiraCode Nerd Font:style=Regular:pixelsize=16
+URxvt*boldFont: xft:FiraCode Nerd Font:style=Regular:pixelsize=16
 URxvt*letterSpace: -1
 URxvt*lineSpacing: 0
 
