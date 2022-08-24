@@ -19,6 +19,7 @@ alias open='xdg-open'
 alias svim='sudo vim'
 alias hs='history | grep'
 alias rm='rm'
+alias ls='ls -a'
 
 alias cdpoly="cd ~/Dotfiles/polybar/.config/polybar/"
 alias cdi3="cd ~/Dotfiles/i3.config/i3/"
