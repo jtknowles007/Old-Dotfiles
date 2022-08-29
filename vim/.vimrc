@@ -139,9 +139,9 @@ endfunc
 
 " VIMWIKI INTEGRATION
 let g:vimwiki_list = [
-    \{'path': '~/Dropbox/VimWiki/pd.wiki', 'path_html': '~/Dropbox/VimWWW/html/pd'},
-    \{'path': '~/Dropbox/VimWiki/pk.wiki', 'path_html': '~/Dropbox/VimWWW/html/pk'},
-    \{'path': '~/Dropbox/VimWiki/journal.wiki', 'path_html': '~/Dropbox/VimWWW/html/journal'}]
+    \{'path': '~/Dropbox/VimWiki/pd/', 'path_html': '~/Dropbox/VimWWW/pd', 'name': 'PD Documentation', 'syntax': 'default', 'ext':'wiki'},
+    \{'path': '~/Dropbox/VimWiki/pk/', 'path_html': '~/Dropbox/VimWWW/pk/', 'name': 'PK Documentation', 'syntax': 'default', 'ext':'wiki'},
+    \{'path': '~/Dropbox/VimWiki/journal/', 'path_html': '~/Dropbox/VimWWW/html/journal/', 'name': 'My Journal', 'syntax': 'default', 'ext':'wiki'}]
 
 au BufRead, BufNewFile *.wiki set filetype=vimwiki
 :autocmd FileType vimwiki map d:VimwikiMakeDiaryNote
