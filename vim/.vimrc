@@ -1,4 +1,5 @@
 set nocompatible
+set noswapfile
 filetype plugin indent on
 
 "COLORS
@@ -138,9 +139,9 @@ endfunc
 
 " VIMWIKI INTEGRATION
 let g:vimwiki_list = [
-    \{'path': '~/VimWiki/linux.wiki', 'path_html': '~/Projects/www/html/wiki/linux'},
-    \{'path': '~/VimWiki/personal.wiki', 'path_html': '~/Projects/www/html/wiki/personal'},
-    \{'path': '~/VimWiki/wgu.wiki', 'path_html': '~/Projects/www/html/wiki'}]
+    \{'path': '~/Dropbox/VimWiki/pd.wiki', 'path_html': '~/Dropbox/VimWWW/html/pd'},
+    \{'path': '~/Dropbox/VimWiki/pk.wiki', 'path_html': '~/Dropbox/VimWWW/html/pk'},
+    \{'path': '~/Dropbox/VimWiki/journal.wiki', 'path_html': '~/Dropbox/VimWWW/html/journal'}]
 
 au BufRead, BufNewFile *.wiki set filetype=vimwiki
 :autocmd FileType vimwiki map d:VimwikiMakeDiaryNote
