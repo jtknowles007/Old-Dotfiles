@@ -8,7 +8,7 @@ def stock(symbol):
     openprice = lookup.info['previousClose']
     if quoteprice >=1:
         currentprice = round(quoteprice)
-        diffprice = abs(round(quoteprice - openprice))
+        diffprice = round(quoteprice - openprice)
     else:
         currentprice = round(quoteprice,3)
         diffprice = round((quoteprice - openprice,3))
