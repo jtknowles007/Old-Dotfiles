@@ -1,8 +1,7 @@
 #! /usr/bin/env python3
 
 import datetime
-import pytz
-from pytz import timezone
+import holidays
 import yfinance as yf
 import csv
 
@@ -56,9 +55,13 @@ def main():
     time_now = datetime.datetime.now().time()
     time_open = datetime.time(9,30,0)
     time_close = datetime.time(16,0,0)
+    us_holidays = holidays.US()
+
+    
     if day_number <5:
-        if time_now >= time_open and time_now <= time_close:
-            getstocks()
+        if us_holidays == False:
+            if time_now >= time_open and time_now <= time_close:
+                getstocks()
     else:
         offhours()
 
