@@ -18,7 +18,32 @@
 #define S_base1         #586e75
 #define S_base2         #073642
 #define S_base3         #002b36
-#define S_base4		#fbfbfc
+#define S_base4		    #fbfbfc
+
+*.background:              S_base4
+*.foreground:              S_base0
+*.fading:                  40
+*.fadeColor:               S_base03
+*.cursorColor:             S_base1
+*.pointerColorBackground:  S_base01
+*.pointerColorForeground:  S_base1
+*.color0:                  S_base02
+*.color1:                  S_red
+*.color2:                  S_green
+*.color3:                  S_yellow
+*.color4:                  S_blue
+*.color5:                  S_magenta
+*.color6:                  S_cyan
+*.color7:                  S_base2
+*.color9:                  S_orange
+*.color8:                  S_base03
+*.color10:                 S_base01
+*.color11:                 S_base00
+*.color12:                 S_base0
+*.color13:                 S_violet
+*.color14:                 S_base1
+*.color15:                 S_base3
+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! XFT                       !
@@ -35,63 +60,34 @@ xft.hintstyle: hintful
 ! URxvt                     !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-URxvt.externalBorder: 2
-URxvt.internalBorder: 4
-
-URxvt.scrollstyle:plain
-URxvt.jumpScroll:true
-URxvt.skipScroll:true
-
-URxvt*background:              S_base4
-URxvt*foreground:              S_base0
-URxvt*fading:                  40
-URxvt*fadeColor:               S_base03
-URxvt*cursorColor:             S_base1
-URxvt*pointerColorBackground:  S_base01
-URxvt*pointerColorForeground:  S_base1
-
-URxvt*color0:                  S_base02
-URxvt*color1:                  S_red
-URxvt*color2:                  S_green
-URxvt*color3:                  S_yellow
-URxvt*color4:                  S_blue
-URxvt*color5:                  S_magenta
-URxvt*color6:                  S_cyan
-URxvt*color7:                  S_base2
-URxvt*color9:                  S_orange
-URxvt*color8:                  S_base03
-URxvt*color10:                 S_base01
-URxvt*color11:                 S_base00
-URxvt*color12:                 S_base0
-URxvt*color13:                 S_violet
-URxvt*color14:                 S_base1
-URxvt*color15:                 S_base3
-
 ! General
-URxvt*loginShell: true
-URxvt*scrollBar: false
-URxvt*saveLines: 12000
-URxvt*internalBorder: 10
-URxvt*cursorBlink: true
-URxvt*buffered: true
+URxvt.loginShell: true
+URxvt.scrollBar: false
+URxvt.saveLines: 12000
+URxvt.internalBorder: 25
+URxvt.cursorBlink: false
+URxvt.cursorUnderline: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+URxvt.buffered: true
+URxvt.lineSpace: 1
+URxvt.letterSpace: -1
+URxvt.geometry: 100x50
 
 ! Transparency
-URxvt*transparent: false
-URxvt*shading: 20
+URxvt*.transparent: false
+URxvt*.shading: 20
 
 
 ! Fonts & Spacing
-URxvt*font: xft:Source Code Pro for Powerline:style=Regular:pixelsize=14
-URxvt*boldFont: xft:Source Code Pro for Powerline:style=Bold:pixelsize=14
-URxvt.italicFont: xft:Source Code Pro for Powerline:style=Italic:pixelsize=14
-URxvt.boldItalicFont: xft:Source Code Pro for Powerline:style=BoldItalic:pixelsize=14
-
-URxvt*letterSpace: 0
-URxvt*lineSpacing: 0
+URxvt.font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=14
+URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=Bold:pixelsize=14
 
 ! Perl
-URxvt.perl-lib: ~/.urxvt/ext
-URxvt.perl-ext-common: default,font-size,url-select
+URxvt*.perl-lib: ~/.urxvt/ext
+URxvt*.perl-ext-common: default,font-size,url-select
 
 !--Perl Font-Size
 URxvt.keysym.C-Up: font-size:increase
