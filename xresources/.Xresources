@@ -82,8 +82,8 @@ URxvt*.shading: 20
 
 
 ! Fonts & Spacing
-URxvt.font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=14
-URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=Bold:pixelsize=14
+URxvt.font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=14,xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=14
+URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=Bold:pixelsize=14,xft:DejaVu Sans Mono for Powerline:style=Bold:pixelsize=14
 
 ! Perl
 URxvt*.perl-lib: ~/.urxvt/ext
