@@ -17,11 +17,11 @@ def stock(symbol):
         currentprice = round(quoteprice,3)
         diffprice = round((quoteprice - openprice,3))
     if diffprice >0:
-        symbol = '${color 009900}  '
+        symbol = '${color 00FF00}'
     elif diffprice <0:
-        symbol = '${color 990000}  '
+        symbol = '${color FF0000}'
     else:
-        symbol = '${color 333333}  '
+        symbol = '${color FFFFFF}'
     return [currentprice,symbol,diffprice]
 
 def getstocks():
@@ -30,21 +30,22 @@ def getstocks():
     ndq = stock(stocklist[1])
     sp5 = stock(stocklist[2])
 
-    print("${{color}}DJIA:${{goto 160}}{:,}${{font Font Awesome 6 Free Solid:size=10}}${{goto 235}}{}${{font}}${{color}}${{voffset -1}}${{alignr}}{:,}".format(dji[0],dji[1],dji[2]))
-    print("${{color}}NASDAQ:${{goto 160}}{:,}${{font Font Awesome 6 Free Solid:size=10}}${{goto 235}}{}${{font}}${{color}}${{voffset -1}}${{alignr}}{:,}".format(ndq[0],ndq[1],ndq[2]))
-    print("${{color}}S&P 500:${{goto 160}}{:,}${{font Font Awesome 6 Free Solid:size=10}}${{goto 235}}{}${{font}}${{color}}${{voffset -1}}${{alignr}}{:,}".format(sp5[0],sp5[1],sp5[2]))
+    #output stock data in conky format
+    print("${{color}}DJIA${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{}${{color}}".format(dji[0],dji[1],dji[2]))
+    print("${{color}}NASDAQ${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{}${{color}}".format(ndq[0],ndq[1],ndq[2]))
+    print("${{color}}S&P 500${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{}${{color}}".format(sp5[0],sp5[1],sp5[2]))
 
+    #output stock data to text file for off hours
     header = "NAME\tVALUE\tCHANGE\n"
     dji_out = "DJIA\t{:,}\t{:+g}\n".format(dji[0],dji[2])
     ndq_out = "NASDAQ\t{:,}\t{:+g}\n".format(ndq[0],ndq[2])
     sp5_out = "S&P 500\t{:,}\t{:+g}".format(sp5[0],sp5[2])
 
-    file = open("output.txt","w")
-    file.write(header + dji_out + ndq_out + sp5_out)
-    file.close
+    with open("/home/john/.config/conky/output.txt", "w") as file:
+        file.write(header + dji_out + ndq_out + sp5_out)
+        file.close
 
 def offhours():
-    print("Markets Closed")
     with open("/home/john/.config/conky/output.txt", "r") as stocks:
         tsv_reader = csv.DictReader(stocks, delimiter="\t")
         for stock_index in tsv_reader:
@@ -58,6 +59,7 @@ def main():
     time_close = datetime.time(16,0,0)
     us_holidays = holidays.US()
 
+    # Weekday, Non-Holiday, between market open and close?  Run the current stocks.  Othewise, display closing numbers
     if day_number <5 and date_now not in us_holidays and time_now >= time_open and time_now <= time_close:
         getstocks()
     else:
