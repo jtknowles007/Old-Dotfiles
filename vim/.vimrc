@@ -18,6 +18,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'hdima/python-syntax'
+Plugin 'syntastic'
+
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
 
@@ -123,9 +125,3 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
-
-" ULTISNIPS INTEGRATION
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
