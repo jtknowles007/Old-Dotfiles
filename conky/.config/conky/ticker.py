@@ -1,6 +1,5 @@
 #! /usr/bin/env python3
 
-
 import datetime
 import holidays
 import yfinance as yf
@@ -31,9 +30,9 @@ def getstocks():
     sp5 = stock(stocklist[2])
 
     #output stock data in conky format
-    print("${{color}}DJIA${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{}${{color}}".format(dji[0],dji[1],dji[2]))
-    print("${{color}}NASDAQ${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{}${{color}}".format(ndq[0],ndq[1],ndq[2]))
-    print("${{color}}S&P 500${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{}${{color}}".format(sp5[0],sp5[1],sp5[2]))
+    print("${{color}}DJIA${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(dji[0],dji[1],dji[2]))
+    print("${{color}}NASDAQ${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(ndq[0],ndq[1],ndq[2]))
+    print("${{color}}S&P 500${{goto 170}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(sp5[0],sp5[1],sp5[2]))
 
     #output stock data to text file for off hours
     header = "NAME\tVALUE\tCHANGE\n"
