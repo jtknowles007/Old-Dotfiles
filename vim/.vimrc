@@ -14,12 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vimwiki/vimwiki'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'mattn/calendar-vim'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'hdima/python-syntax'
 " Plugin End - All plugins must be included between Begin and End
@@ -58,7 +54,7 @@ set showmode
 set confirm
 set undolevels=1000
 set history=1000
-set shell=bash
+set shell=zsh
 set updatetime=250
 set nospell
 
@@ -115,15 +111,6 @@ set directory=.swp/,~/.swp/,/tmp//
 iabbrev john@ jtknowles007@gmail.com
 iabbrev rn@ johntknowlesrn@gmail.com
 
-" LATEX
-autocmd FileType tex nnoremap <F5> :!xelatex<Space><C-R>%<CR>
-autocmd FileType tex inoremap <F5><Esc> :!xelatex<Space><C-R>%<Enter>a
-autocmd FileType tex nnoremap <F4> :!pdflatex<Space><C-R>%<CR><CR>
-autocmd FileType tex inoremap <F5><Esc> :!pdflatex<Space><C-R>%<Enter>a
-autocmd FileType tex map <F3> :w !detex\|wc -w<CR>
-autocmd FileType tex inoremap <F3><Esc> :w !detex\|wc -w<CR>
-autocmd FileType tex nnoremap <leader>p :!atril <C-R>%<backspace><backspace><backspace>pdf &<CR><CR>
-
 " PYTHON
 let python_highlight_all = 1
 
@@ -137,39 +124,8 @@ function! ToggleNumber()
     endif
 endfunc
 
-" VIMWIKI INTEGRATION
-let g:vimwiki_list = [
-    \{'path': '~/Dropbox/VimWiki/pd/', 'path_html': '~/Dropbox/VimWWW/pd', 'name': 'PD Documentation', 'syntax': 'default', 'ext':'wiki'},
-    \{'path': '~/Dropbox/VimWiki/pk/', 'path_html': '~/Dropbox/VimWWW/pk/', 'name': 'PK Documentation', 'syntax': 'default', 'ext':'wiki'},
-    \{'path': '~/Dropbox/VimWiki/journal/', 'path_html': '~/Dropbox/VimWWW/html/journal/', 'name': 'My Journal', 'syntax': 'default', 'ext':'wiki'}]
-
-au BufRead, BufNewFile *.wiki set filetype=vimwiki
-:autocmd FileType vimwiki map d:VimwikiMakeDiaryNote
-function! ToggleCalendar()
-    execute ":Calendar"
-    if exists("g:calendar_open")
-        if g:calendar_open ==1
-            execute "q"
-            unlet g:calendar_open
-        else
-            g:calendar_open = 1
-        end
-    else
-        let g:calendar_open = 1
-    end
-endfunction
-:autocmd FileType vimwiki map c :call ToggleCalendar()
-
 " ULTISNIPS INTEGRATION
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-" LIVEPREVIEW INTEGRATION
-let g:livepreview_previewer='atril'
-
-" AIRLINE INTEGRATION
-let g:airline_theme='zenburn'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
