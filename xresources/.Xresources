@@ -5,7 +5,7 @@
 
 *.background:              bg_color
 *.foreground:              fg_color
-*.fading:                  60
+*.fading:                  25
 *.cursorColor:             fg_color
 *.color0:                  color_0
 *.color1:                  color_1
@@ -44,7 +44,7 @@ URxvt.loginShell: true
 URxvt.scrollBar: false
 URxvt.saveLines: 12000
 URxvt.internalBorder: 25
-URxvt.cursorBlink: false
+URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
