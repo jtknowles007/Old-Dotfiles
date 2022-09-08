@@ -1,0 +1,19 @@
+#define bg_color    #f5f5f5
+#define fg_color    #303030
+#define color_0     #d0d0d0
+#define color_8     #f5f5f5
+#define color_1     #ac4142
+#define color_9     #ac4142
+#define color_2     #90a959
+#define color_10    #90a959
+#define color_3     #f4bf75
+#define color_11    #f4bf75
+#define color_4     #6a9fb5
+#define color_12    #6a9fb5
+#define color_5     #aa759f
+#define color_13    #aa759f
+#define color_6     #75b5aa
+#define color_14    #75b5aa
+#define color_7     #151515
+#define color_15    #505050
+
