@@ -3,26 +3,26 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #include ".Xresources.d/colorscheme01"
 
-*.background:              bg_color
-*.foreground:              fg_color
-*.fading:                  25
-*.cursorColor:             fg_color
-*.color0:                  color_0
-*.color1:                  color_1
-*.color2:                  color_2
-*.color3:                  color_3
-*.color4:                  color_4
-*.color5:                  color_5
-*.color6:                  color_6
-*.color7:                  color_7
-*.color8:                  color_8
-*.color9:                  color_9
-*.color10:                 color_10
-*.color11:                 color_11
-*.color12:                 color_12
-*.color13:                 color_13
-*.color14:                 color_14
-*.color15:                 color_15
+URxvt.background:              bg_color
+URxvt.foreground:              fg_color
+URxvt.fading:                  25
+URxvt.cursorColor:             fg_color
+URxvt.color0:                  color_0
+URxvt.color1:                  color_1
+URxvt.color2:                  color_2
+URxvt.color3:                  color_3
+URxvt.color4:                  color_4
+URxvt.color5:                  color_5
+URxvt.color6:                  color_6
+URxvt.color7:                  color_7
+URxvt.color8:                  color_8
+URxvt.color9:                  color_9
+URxvt.color10:                 color_10
+URxvt.color11:                 color_11
+URxvt.color12:                 color_12
+URxvt.color13:                 color_13
+URxvt.color14:                 color_14
+URxvt.color15:                 color_15
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! XFT                       !
