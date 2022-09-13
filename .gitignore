@@ -1,5 +1,6 @@
 *.sw?
 __pycache__/
+__init__.py
 credentials.py
 xkcd*.png
 output.txt
