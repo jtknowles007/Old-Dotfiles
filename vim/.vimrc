@@ -59,6 +59,7 @@ set history=1000
 set shell=zsh
 set updatetime=250
 set nospell
+set buftype=""
 
 " SEARCHING
 set ignorecase      " Ignore case when searching
