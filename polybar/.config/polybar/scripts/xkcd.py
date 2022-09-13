@@ -3,11 +3,12 @@ import os
 import argparse
 import wget
 import PySimpleGUI as sg
-import polymodule as pm
-color = pm.pycolors('color6')
+# import polymodule as pm
+import getjson as gj
+# color = pm.pycolors('color6')
 
 url = "https://xkcd.com/info.0.json"
-xkcd = pm.getjson(url)
+xkcd = gj.getjson(url)
 title = xkcd['safe_title']
 image = xkcd['img']
 savename = '/home/john/.config/polybar/images/xkcd.png'
