@@ -30,9 +30,9 @@ def getstocks():
     sp5 = stock(stocklist[2])
 
     #output stock data in conky format
-    print("${{color}}DJIA${{goto 170}}${{alignr}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(dji[0],dji[1],dji[2]))
-    print("${{color}}NASDAQ${{goto 170}}${{alignr}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(ndq[0],ndq[1],ndq[2]))
-    print("${{color}}S&P 500${{goto 170}}${{alignr}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(sp5[0],sp5[1],sp5[2]))
+    print("${{color}}DJIA${{goto 160}}${{alignr 50}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(dji[0],dji[1],dji[2]))
+    print("${{color}}NASDAQ${{goto 160}}${{alignr 50}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(ndq[0],ndq[1],ndq[2]))
+    print("${{color}}S&P 500${{goto 160}}${{alignr 50}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(sp5[0],sp5[1],sp5[2]))
 
     #output stock data to text file for off hours
     header = "NAME\tVALUE\tCHANGE\n"
@@ -48,7 +48,7 @@ def offhours():
     with open("/home/john/.config/conky/output.txt", "r") as stocks:
         tsv_reader = csv.DictReader(stocks, delimiter="\t")
         for stock_index in tsv_reader:
-            print("${{color6}}{}${{goto 170}}${{alignr}}{}${{goto 245}}${{alignr}}{}${{color}}".format(stock_index["NAME"],stock_index["VALUE"],stock_index["CHANGE"]))
+            print("${{color6}}{}${{goto 160}}${{alignr 50}}{}${{goto 245}}${{alignr}}{}${{color}}".format(stock_index["NAME"],stock_index["VALUE"],stock_index["CHANGE"]))
 
 def main():
     date_now = datetime.datetime.now()
