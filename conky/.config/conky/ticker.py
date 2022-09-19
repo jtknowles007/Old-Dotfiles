@@ -21,6 +21,10 @@ def stock(symbol):
         symbol = '${color FF0000}'
     else:
         symbol = '${color FFFFFF}'
+    currentprice = ("{:,}".format(currentprice))
+    currentprice = str(currentprice)
+    currentprice = currentprice.rjust(6,"0")
+
     return [currentprice,symbol,diffprice]
 
 def getstocks():
@@ -30,15 +34,15 @@ def getstocks():
     sp5 = stock(stocklist[2])
 
     #output stock data in conky format
-    print("${{color}}DJIA${{goto 160}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(dji[0],dji[1],dji[2]))
-    print("${{color}}NASDAQ${{goto 160}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(ndq[0],ndq[1],ndq[2]))
-    print("${{color}}S&P 500${{goto 160}}{:,}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(sp5[0],sp5[1],sp5[2]))
+    print("${{color}}DJIA${{goto 160}}{}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(dji[0],dji[1],dji[2]))
+    print("${{color}}NASDAQ${{goto 160}}{}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(ndq[0],ndq[1],ndq[2]))
+    print("${{color}}S&P 500${{goto 160}}{}${{goto 245}}${{alignr}}{}{:+g}${{color}}".format(sp5[0],sp5[1],sp5[2]))
 
     #output stock data to text file for off hours
     header = "NAME\tVALUE\tCHANGE\n"
-    dji_out = "DJIA\t{:,}\t{:+g}\n".format(dji[0],dji[2])
-    ndq_out = "NASDAQ\t{:,}\t{:+g}\n".format(ndq[0],ndq[2])
-    sp5_out = "S&P 500\t{:,}\t{:+g}".format(sp5[0],sp5[2])
+    dji_out = "DJIA\t{}\t{:+g}\n".format(dji[0],dji[2])
+    ndq_out = "NASDAQ\t{}\t{:+g}\n".format(ndq[0],ndq[2])
+    sp5_out = "S&P 500\t{}\t{:+g}".format(sp5[0],sp5[2])
 
     with open("/home/john/.config/conky/output.txt", "w") as file:
         file.write(header + dji_out + ndq_out + sp5_out)
