@@ -23,7 +23,7 @@ def stock(symbol):
         symbol = '${color FFFFFF}'
     currentprice = ("{:,}".format(currentprice))
     currentprice = str(currentprice)
-    currentprice = currentprice.rjust(6,"0")
+    currentprice = currentprice.rjust(6," ")
 
     return [currentprice,symbol,diffprice]
 
