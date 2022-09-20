@@ -41,9 +41,15 @@ FILE_EXTENSION_LOWER="$(printf "%s" "${FILE_EXTENSION}" | tr '[:upper:]' '[:lowe
 ## Settings
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
 HIGHLIGHT_TABWIDTH=${HIGHLIGHT_TABWIDTH:-8}
+
+## Change HIGHLIGHT_STYLE to change the way highlight displays preview text in ranger
+## See list of available hightlight styles: ls /usr/share/hightlight/themes/
 HIGHLIGHT_STYLE=${HIGHLIGHT_STYLE:-solarized-light}
 HIGHLIGHT_OPTIONS="--replace-tabs=${HIGHLIGHT_TABWIDTH} --style=${HIGHLIGHT_STYLE} ${HIGHLIGHT_OPTIONS:-}"
+
+## See list of available pygmentize styles: pygmentize -L
 PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-solarized-light}
+
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
 OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
 
