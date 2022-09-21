@@ -4,22 +4,19 @@ filetype plugin indent on
 
 "COLORS
 syntax enable       " Enable syntax processing
-set t_Co=256
+set background=light
+" let g:solarized_termcolors=256
+colorscheme solarized
+
 
 " VUNDLE PLUGIN MANAGER
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Plugin Begin - All plugins must be included between Begin and End
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'hdima/python-syntax'
-Plugin 'syntastic'
-
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
 
@@ -109,10 +106,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
 set directory=.swp/,~/.swp/,/tmp//
-
-" ABBREVIATIONS
-iabbrev john@ jtknowles007@gmail.com
-iabbrev rn@ johntknowlesrn@gmail.com
 
 " PYTHON
 let python_highlight_all = 1
