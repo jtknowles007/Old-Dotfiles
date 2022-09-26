@@ -150,6 +150,11 @@ nnoremap <leader>s :set spell!<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" F2: Comment selected block with #
+map <F2> :s/^\(.*\)$/#\1/g<CR>
+" F3: Uncomment selected block that's commented with #
+map <F3> :s/^#//g<CR>
+
 " SAVE LOCATIONS OF SWAP, BACKUP, UNDO
 set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
