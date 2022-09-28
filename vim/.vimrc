@@ -7,7 +7,8 @@ let g:kite_supported_languages = ['python', 'javascript']
 "COLORS
 syntax on       " Enable syntax processing
 " set background=light
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
+let t_Co=256
 colorscheme pyte
 
 
@@ -41,22 +42,26 @@ Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
 
-let g:bargreybars_auto=0
+let g:airline_theme='qwq'
 let g:airline_solorized_bg='light'
 let g:airline_powerline_fonts=1
 let g:airline#extension#tabline#enable=1
 let g:airline#extension#tabline#left_sep=' '
 let g:airline#extension#tabline#left_alt_sep='|'
 let g:airline#extension#tabline#formatter='unique_tail'
-let NERDTreeQuitOnOpen=1
+let g:airine#extensions#coc#enable=1
+let g:airline#extension#nerdtree_statusline=1
+let g:NERDTreeQuitOnOpen=1
 
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = '#'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = '#'
-
+let g:airline#extension#whitespace#symbol='!'
+let g:airline_detect_spelllang=1
 
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
@@ -103,11 +108,10 @@ set completeopt=noinsert,menuone,noselect
 set mouse=a
 set splitbelow splitright
 set title
-set guifont=hack_nerd_font:h11
 
 " SEARCHING
 set ignorecase      " Ignore case when searching
-set smartcase       " Except when using capital letters 
+set smartcase       " Except when using capital letters
 set incsearch       " Search as characters are entered
 set hlsearch        " Highlight all matches
 
