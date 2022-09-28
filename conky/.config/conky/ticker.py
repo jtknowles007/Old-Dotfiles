@@ -63,7 +63,7 @@ def main():
     time_close = datetime.time(16,0,0)
     us_holidays = holidays.US()
 
-    # Weekday, Non-Holiday, between market open and close?  Run the current stocks.  Othewise, display closing numbers
+    # Weekday, Non-Holiday, between market open and close?  Run the current stocks.  Otherwise, display closing numbers
     if day_number <5 and date_now not in us_holidays and time_now >= time_open and time_now <= time_close:
         getstocks()
     else:
