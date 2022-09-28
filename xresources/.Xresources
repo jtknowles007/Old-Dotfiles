@@ -29,11 +29,11 @@ URxvt.color15:                 color_15
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 xft.dpi: 96
-xft.antialias: 1
+xft.antialias: 0
 xft.rgba: rgb
-xft.hinting: 1
+xft.hinting: 0
 xft.autohint: 0
-xft.hintstyle: hintful
+xft.hintstyle: hintfull
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! URxvt                     !
