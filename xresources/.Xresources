@@ -1,4 +1,4 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
 ! Colors                    !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #include ".Xresources.d/colorscheme01"
@@ -52,7 +52,7 @@ URxvt.depth: 24
 URxvt.iso14755: false
 URxvt.buffered: true
 URxvt.lineSpace: 1
-URxvt.letterSpace: -1
+URxvt.letterSpace: 0
 URxvt.geometry: 100x50
 
 ! Transparency
@@ -61,8 +61,10 @@ URxvt*.shading: 20
 
 
 ! Fonts & Spacing
-URxvt.font: xft:SauceCodePro Nerd Font Mono:style=Regular:pixelsize=14,xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=14
-URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=Bold:pixelsize=14,xft:DejaVu Sans Mono for Powerline:style=Bold:pixelsize=14
+URxvt.font: xft:MesloLGS NF:style=Regular:pixelsize=14
+URxvt.boldFont: xft:MesloLGS NF:style=Bold:pixelsize=14
+
+
 
 ! Perl
 URxvt*.perl-lib: ~/.urxvt/ext
