@@ -2,24 +2,24 @@ set nocompatible
 set noswapfile
 filetype plugin indent on
 
-let g:kite_supported_languages = ['python', 'javascript']
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "COLORS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
 syntax on       " Enable syntax processing
-" set background=light
-" let g:solarized_termcolors=256
-let t_Co=256
-colorscheme pyte
+
+" Python
+let python_highlight_all = 1
 
 
-" VUNDLE PLUGIN MANAGER
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Plugin Begin - All plugins must be included between Begin and End
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'airblade/vim-gitgutter'
-" Plugin 'hdima/python-syntax'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -39,10 +39,18 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plugin 'chriskempson/base16-vim'
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
 
-let g:airline_theme='qwq'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GLOBAL VARIABLES
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Code Completion
+let g:kite_supported_languages = ['python', 'javascript']
+
+" Status Line
+let g:airline_theme='atelierforest'
 let g:airline_solorized_bg='light'
 let g:airline_powerline_fonts=1
 let g:airline#extension#tabline#enable=1
@@ -51,14 +59,16 @@ let g:airline#extension#tabline#left_alt_sep='|'
 let g:airline#extension#tabline#formatter='unique_tail'
 let g:airine#extensions#coc#enable=1
 let g:airline#extension#nerdtree_statusline=1
-let g:NERDTreeQuitOnOpen=1
+let g:airline_section_z = '%03p%% %03l/%03L:%02c'
+let g:airline#extension#whitespace#symbol='!'
+let g:airline_detect_spelllang=1
 
+" NERDTree Menu
+let g:NERDTreeQuitOnOpen=1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = '#'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = '#'
-let g:airline#extension#whitespace#symbol='!'
-let g:airline_detect_spelllang=1
 
 autocmd vimenter * NERDTree
 autocmd vimenter * wincmd p
@@ -121,53 +131,62 @@ set foldnestmax=10      " Max 10 depth
 set foldenable
 set foldlevelstart=10
 
-" DISABLE ARROW KEYS
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY MAPPING
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" EASIER SPLIT NAVIGATION
-" Navigate panes with arrow keys
+" Custom Leader
+let mapleader=","
+
+" New Splits
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Navigate Splits with Arrow Keys
 map <up> <C-w><up>
 map <down> <C-w><down>
 map <left> <C-w><left>
 map <right> <C-w><right>
 
-" CUSTOM LEADER
-let mapleader=","
-
-" CUSTOM KEY BINDINGS
+" Navigate by Display Line not Physical Line
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+
+" Turn Off Highlighting Until Next Search
 map <silent> <leader><CR> :noh<CR>
+
+" Folding
 nnoremap <space> za
+
+" Custom Function Mapping
 nnoremap <leader>l :call ToggleNumber()<CR>
 nnoremap <leader>w :set list!<CR>
 nnoremap <leader>s :set spell!<CR>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" F2: Comment selected block with #
-map <F2> :s/^\(.*\)$/#\1/g<CR>
-" F3: Uncomment selected block that's commented with #
-map <F3> :s/^#//g<CR>
+" Comment Blocks
+map <F2> :s/^\(.*\)$/#\1/g<CR>      " Comment selected block with #
+map <F3> :s/^#//g<CR>               " Uncomment block with #
 
-" SAVE LOCATIONS OF SWAP, BACKUP, UNDO
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SPELLCHECK
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Highlighting
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SAVE LOCATIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
 set directory=.swp/,~/.swp/,/tmp//
 
-" PYTHON
-let python_highlight_all = 1
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM FUNCTIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! ToggleNumber()
     if(&relativenumber ==1)
         set norelativenumber
