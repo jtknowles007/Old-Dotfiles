@@ -1,7 +1,7 @@
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
 ! Colors                    !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#include ".Xresources.d/colorscheme01"
+#include ".Xresources.d/atelierforest"
 
 URxvt.background:              bg_color
 URxvt.foreground:              fg_color
@@ -82,18 +82,3 @@ URxvt.keysym.C-slash: font-size:show
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: google-chrome
 URxvt.url-select.underline: true
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Rofi                      !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-rofi.width: 25
-rofi.hide-scrollbar: true
-rofi.location: 0
-rofi.lines: 10
-rofi.sidebar-mode:true
-rofi.separator-style: solid
-rofi.bw: 3
-rofi.font: SauceCodePro Nerd Font Mono 12
-rofi.show-icons:true
-rofi.drun-icon-theme:Papirus
