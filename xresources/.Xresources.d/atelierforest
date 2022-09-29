@@ -1,0 +1,39 @@
+! atelierforest.dark colorscheme
+! from terminal.sexy
+
+#define bg_color    #1b1918
+#define fg_color    #a8a19f
+#define cur_color   #a8a19f
+
+! Black
+#define color_0     #1b1918
+#define color_8     #766e6b
+
+! Red
+#define color_1     #f22c40
+#define color_9     #f22c40
+
+! Green
+#define color_2     #5ab738
+#define color_10    #5ab738
+
+! Yellow
+#define color_3     #d5911a
+#define color_11    #d5911a
+
+!Blue
+#define color_4     #407ee7
+#define color_12    #407ee7
+
+! Magenta
+#define color_5     #6666ea
+#define color_13    #6666ea
+
+! Cyan
+#define color_6     #00ad9c
+#define color_14    #00ad9c
+
+! White
+#define color_7     #a8a19f
+#define color_15    #f1efee
+
