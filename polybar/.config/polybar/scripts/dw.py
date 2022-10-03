@@ -38,6 +38,5 @@ icondict = {
     "fog":""
     }
 
-# Display weather in Polybar 
-#print("%{{F{}}} {}%{{F-}} {}{}".format("#FF0000",icondict.get(icon,icondefault),current,symbol))
-print("${{font Weather Icons:size=11}}{}${{font}} {}{}".format(icondict.get(icon,icondefault),current,symbol))
+# Output Weather 
+print("${{font Weather Icons:size=20}}{}${{font}} {}{}".format(icondict.get(icon,icondefault),current,symbol))
