@@ -1,17 +1,10 @@
 #! /usr/bin/env python3
 
-#import polymodule as pm
 import getjson as pm
 from credentials import darkkey
 
-#Assign colors from Pywal
-#weathericoncolor = pm.pycolors('color6')
-
-# Find Latitude and Longitude based on IP
-ipurl = "https://ipapi.co/json/"
-ipdata = pm.getjson(ipurl)
-latitude = ipdata['latitude']
-longitude = ipdata['longitude']
+latitude = 40.0545
+longitude = -85.6743
 
 # Find local weather
 weatherurl = "https://api.darksky.net/forecast/{}/{},{}".format(darkkey,latitude,longitude)
