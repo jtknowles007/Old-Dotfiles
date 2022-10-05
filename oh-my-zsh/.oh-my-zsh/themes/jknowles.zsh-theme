@@ -1,30 +1,17 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
 #
-# agnoster's Theme - https://gist.github.com/3712874
+# JKnowles Theme - A derivative of Agnoster's Theme - 
+# https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
 # # README
 #
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
-#
-# In addition, I recommend the
-# [Solarized theme](https://github.com/altercation/solarized/) and, if you're
-# using it on Mac OS X, [iTerm 2](http://www.iterm2.com/) over Terminal.app -
-# it has significantly better color fidelity.
-#
-# # Goals
-#
-# The aim of this theme is to only show you *relevant* information. Like most
-# prompts, it will only show git information when in a git working directory.
-# However, it goes a step further: everything from the current user and
-# hostname to whether the last call exited with an error to whether background
-# jobs are running in this shell will all be displayed automatically when
-# appropriate.
 
 ### Segments of the prompt, default order declaration
 
-typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
+typeset -aHg JKNOWLES_PROMPT_SEGMENTS=(
     prompt_status
     prompt_context
     prompt_virtualenv
@@ -34,7 +21,7 @@ typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
 )
 
 ### Segment drawing
-# A few utility functions to make it easy and re-usable to draw segmented prompts
+# Utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
 if [[ -z "$PRIMARY_FG" ]]; then
@@ -78,7 +65,7 @@ prompt_end() {
 }
 
 ### Prompt components
-# Each component will draw itself, and hide itself if no information needs to be shown
+# Each component will draw itself and hide itself if no information needs shown
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
@@ -143,26 +130,26 @@ prompt_virtualenv() {
 }
 
 ## Main prompt
-prompt_agnoster_main() {
+prompt_jknowles_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
-  for prompt_segment in "${AGNOSTER_PROMPT_SEGMENTS[@]}"; do
+  for prompt_segment in "${JKNOWLES_PROMPT_SEGMENTS[@]}"; do
     [[ -n $prompt_segment ]] && $prompt_segment
   done
 }
 
-prompt_agnoster_precmd() {
+prompt_jknowles_precmd() {
   vcs_info
-  PROMPT='%{%f%b%k%}$(prompt_agnoster_main) '
+  PROMPT='%{%f%b%k%}$(prompt_jknowles_main) '
 }
 
-prompt_agnoster_setup() {
+prompt_jknowles_setup() {
   autoload -Uz add-zsh-hook
   autoload -Uz vcs_info
 
   prompt_opts=(cr subst percent)
 
-  add-zsh-hook precmd prompt_agnoster_precmd
+  add-zsh-hook precmd prompt_jknowles_precmd
 
   zstyle ':vcs_info:*' enable git
   zstyle ':vcs_info:*' check-for-changes false
@@ -170,4 +157,4 @@ prompt_agnoster_setup() {
   zstyle ':vcs_info:git*' actionformats '%b (%a)'
 }
 
-prompt_agnoster_setup "$@"
+prompt_jknowles_setup "$@"
