@@ -142,7 +142,7 @@ let mapleader=","
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Navigate Splits with Arrow Keys
+" Navigate Splits with Arrow Keys in Normal Mode
 map <up> <C-w><up>
 map <down> <C-w><down>
 map <left> <C-w><left>
@@ -154,7 +154,11 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Turn Off Highlighting Until Next Search
+" Add/Remove highlighting of characters past column 80
+map <leader>ll :match Error /\%>80c/<CR>
+map <leader>lc :match none<CR>
+
+" Remove search highlighting
 map <silent> <leader><CR> :noh<CR>
 
 " Folding
