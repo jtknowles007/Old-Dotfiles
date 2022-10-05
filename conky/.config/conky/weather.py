@@ -6,20 +6,21 @@ from credentials import openweather
 # Variables
 latitude = 40.05 # Lat of Anderson IN
 longitude = -85.67 # Lon of Anderson IN
+zipcode = 46013
 symbol = "°F"
 symbol2 = "%"
 path = "~/Dotfiles/conky/.config/conky/weatherimages/"
 filetype = ".png"
 
 # Get current weather from OpenWeather and extract JSON data
-weatherurl = ("https://api.openweathermap.org/data/2.5/weather?lat={}&lon={}" \
-              "&units=imperial&appid={}".format(latitude,longitude,openweather))
+weatherurl = ("https://api.openweathermap.org/data/2.5/weather?zip={},us" \
+              "&units=imperial&appid={}".format(zipcode,openweather))
 weatherdata = pm.getjson(weatherurl)
 
 # Gather data elements from weather report that we're interested in displaying
-current = round(weatherdata['main']['temp'],0)
-feelslike = round(weatherdata['main']['feels_like'],0)
-humidity = round(weatherdata['main']['humidity'],0)
+current = round(weatherdata['main']['temp'],1)
+feelslike = round(weatherdata['main']['feels_like'],1)
+humidity = weatherdata['main']['humidity']
 condition = weatherdata['weather'][0]['description'].title()
 icon = weatherdata['weather'][0]['icon']
 
