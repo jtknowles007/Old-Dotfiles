@@ -26,6 +26,6 @@ icon = weatherdata['weather'][0]['icon']
 iconpath = path + icon + filetype
 
 # Output weather in Conky format
-print("${{image {} -s 50x50}} ${{offset 50}}${{voffset 20}}{}${{offset 25}}" \
+print("${{image {} -p 0,0 -s 50x50}} ${{offset 50}}${{voffset 20}}{}${{offset 25}}" \
       "Currently:{}{} ${{offset 25}}Low:{}{}${{offset 10}}High:{}{}" \
       .format(iconpath,condition,current,symbol,low,symbol,high,symbol))
