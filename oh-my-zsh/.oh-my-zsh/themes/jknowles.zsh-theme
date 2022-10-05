@@ -1,6 +1,4 @@
-# vim:ft=zsh ts=2 sw=2 sts=2
-#
-# JKnowles Theme - A derivative of Agnoster's Theme - 
+# JKnowles Theme - A derivative of Agnoster's Theme
 # https://gist.github.com/3712874
 # A Powerline-inspired theme for ZSH
 #
@@ -25,7 +23,7 @@ typeset -aHg JKNOWLES_PROMPT_SEGMENTS=(
 
 CURRENT_BG='NONE'
 if [[ -z "$PRIMARY_FG" ]]; then
-	PRIMARY_FG=black
+  PRIMARY_FG=black
 fi
 
 # Characters
