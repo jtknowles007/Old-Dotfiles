@@ -33,3 +33,9 @@ alias sz="source ~/.zshrc"
 
 # Suffix Aliases
 #
+
+# Functions
+# Run ls -al automatically when changing directories
+chpwd(){
+	ll
+}
