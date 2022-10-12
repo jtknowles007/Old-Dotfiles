@@ -15,9 +15,7 @@ alias h10='history -10' # Last 10 commands in history
 alias hg='history | grep' # Grep history for included text
 alias help='man'
 alias rm='rm'
-alias l='ls'
-alias lh='ls -Alh'
-alias ll='ls -al'
+alias ls='ls -alFv --color=always'
 alias python='python3'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
@@ -34,8 +32,3 @@ alias sz="source ~/.zshrc"
 # Suffix Aliases
 #
 
-# Functions
-# Run ls -al automatically when changing directories
-chpwd(){
-	ll
-}
