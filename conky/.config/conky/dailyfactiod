@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+# Get Wikipedia page for today's date
+w3m -cols 9999 -dump https://en.wikipedia.org/wiki/$(date +%B_%d) | \
+
+# Filter out everything but the Events section
+sed -n '/Events\[edit\]/,/Births\[edit\]/ p' | \
+
+# Drop everything except the individual event lines
+sed -n 's/^.*• //p' | \
+
+# Remove everything after the period on each line
+sed 's/\..*//' | \
+
+# Output one random event from the list
+shuf -n 1
