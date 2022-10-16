@@ -9,8 +9,11 @@ sed -n '/Events\[edit\]/,/Births\[edit\]/ p' | \
 # Drop everything except the individual event lines
 sed -n 's/^.*• //p' | \
 
-# Remove everything after the period on each line
-sed 's/\..*//' | \
+# Remove any footnotes from the event if present
+sed 's/\^.*//' | \
 
 # Output one random event from the list
-shuf -n 1
+shuf -n 1 | \
+
+# Wrap line so it will fit in conky window
+fold -s -w 50
