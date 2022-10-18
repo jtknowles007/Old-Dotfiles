@@ -20,5 +20,5 @@ git_custom_status() {
   fi
 }
 
-PROMPT='$fg[red]%{$fg[blue]%}%n@%m:%{$fg[white]%}%~ $(git_custom_status)%{$fg[white]%}%#%E'
+PROMPT='$fg[red]%{$fg[blue]%}%n@%m:%{$fg[white]%}%~ $(git_custom_status)%{$fg[white]%}%#%E '
 # RPROMPT='[%h] %*'
