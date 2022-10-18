@@ -4,6 +4,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -12,6 +13,11 @@ if [ "$TERM" = "rxvt-unicode-256color" ]||[ "$TERM" = "screen" ]; then
 	ZSH_THEME="jknowles_eastwood"
 else
 	ZSH_THEME="robbyrussell"
+fi
+
+# Start tmux as default
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+	tmux attach -t default || tmux new -s default
 fi
 
 # Set list of themes to pick from when loading at random
