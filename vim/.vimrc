@@ -21,8 +21,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sheerun/vim-polyglot'
@@ -39,7 +37,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plugin 'chriskempson/base16-vim'
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
 
@@ -48,20 +45,6 @@ call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Completion
 let g:kite_supported_languages = ['python', 'javascript']
-
-" Status Line
-let g:airline_theme='atelierforest'
-let g:airline_solorized_bg='light'
-let g:airline_powerline_fonts=1
-let g:airline#extension#tabline#enable=1
-let g:airline#extension#tabline#left_sep=' '
-let g:airline#extension#tabline#left_alt_sep='|'
-let g:airline#extension#tabline#formatter='unique_tail'
-let g:airine#extensions#coc#enable=1
-let g:airline#extension#nerdtree_statusline=1
-let g:airline_section_z = '%03p%% %03l/%03L:%02c'
-let g:airline#extension#whitespace#symbol='!'
-let g:airline_detect_spelllang=1
 
 " NERDTree Menu
 let g:NERDTreeQuitOnOpen=1
@@ -99,7 +82,6 @@ set encoding=utf-8
 set showcmd         " Show command in bottom bar
 set laststatus=2    " Always display the status line
 set cmdheight=2     " Set command window height to 2 lines
-set cursorline    " Highlight current line
 set wildmode=list:longest,full
 set wildmenu
 set lazyredraw
@@ -198,4 +180,27 @@ function! ToggleNumber()
     else
         set relativenumber
     endif
-endfunc
+endfunction
+
+set statusline=
+set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+set statusline+=\ %n\           " buffer number
+set statusline+=%#Visual#       " colour
+set statusline+=%{&paste?'\ PASTE\ ':''}
+set statusline+=%{&spell?'\ SPELL\ ':''}
+set statusline+=%#CursorIM#     " colour
+set statusline+=%R                        " readonly flag
+set statusline+=%M                        " modified [+] flag
+set statusline+=%#Cursor#               " colour
+set statusline+=%#CursorLine#     " colour
+set statusline+=\ %t\                   " short file name
+set statusline+=%=                          " right align
+set statusline+=%#CursorLine#   " colour
+set statusline+=\ %Y\                   " file type
+set statusline+=%#CursorIM#     " colour
+set statusline+=\ %3l:%-2c\         " line + column
+set statusline+=%#Cursor#       " colour
+set statusline+=\ %3p%%\                " percentage
