@@ -8,7 +8,7 @@ Else
 fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}("
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%}):"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%}) "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red] %}%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green] %}%{$reset_color%}"
 
@@ -20,5 +20,5 @@ git_custom_status() {
   fi
 }
 
-PROMPT='%{$fg[red]%} %{$fg[blue]%}%n@%m:$(git_custom_status)%{$fg[white]%}%~%# '
+PROMPT='%{$fg[red]%} %{$fg[blue]%}%n@%m $(git_custom_status)%{$fg[white]%}%~ %# '
 # RPROMPT='[%h] %*'
