@@ -195,12 +195,12 @@ set statusline+=%#CursorIM#     " colour
 set statusline+=%R                        " readonly flag
 set statusline+=%M                        " modified [+] flag
 set statusline+=%#Cursor#               " colour
-set statusline+=%#CursorLine#     " colour
+set statusline+=%#LineNrAbove#     " colour
 set statusline+=\ %t\                   " short file name
 set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
+set statusline+=%#SignColumn#   " colour
 set statusline+=\ %Y\                   " file type
-set statusline+=%#CursorIM#     " colour
+set statusline+=%#SignColumn#     " colour
 set statusline+=\ %3l:%-2c\         " line + column
-set statusline+=%#Cursor#       " colour
+set statusline+=%#SignColumn#       " colour
 set statusline+=\ %3p%%\                " percentage
