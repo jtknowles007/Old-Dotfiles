@@ -18,6 +18,7 @@ let python_highlight_all = 1
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Plugin Begin - All plugins must be included between Begin and End
+Plugin 'airblade/vim-gitgutter'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'morhetz/gruvbox'
@@ -76,6 +77,7 @@ set ttimeoutlen=10
 set visualbell
 set noerrorbells
 set number          " Show line numbers
+set signcolumn=yes
 set ruler
 set hidden
 set encoding=utf-8
