@@ -1,6 +1,8 @@
 set nocompatible
 set noswapfile
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "COLORS
