@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+# Getting an error?  Check for latest version of yfinance
+
 import datetime
 import holidays
 import yfinance as yf
