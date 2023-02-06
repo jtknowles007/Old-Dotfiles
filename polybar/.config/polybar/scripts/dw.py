@@ -39,4 +39,4 @@ icondict = {
     }
 
 # Output Weather 
-print("${{font Weather Icons:size=20}}{}${{font}} {}{}".format(icondict.get(icon,icondefault),current,symbol))
+print("{} {}{}".format(icondict.get(icon,icondefault),current,symbol))
