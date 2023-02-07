@@ -4,17 +4,18 @@
 #############################
 
 # Define Colors
-set_from_resource $fg i3wm.color7 #660000
-set_from_resource $bg i3wm.color2 #006600
-set_from_resource $c0 i3wm.color0 #000066
-set_from_resource $c1 i3wm.color1 #66FF66
-set_from_resource $c2 i3wm.color2 #FF6666
-set_from_resource $c3 i3wm.color3 #6666FF
-set_from_resource $c4 i3wm.color4 #36363F
-set_from_resource $c5 i3wm.color5 #363F36
-set_from_resource $c6 i3wm.color6 #3F3636
-set_from_resource $c7 i3wm.color7 #3F3F36
-set_from_resource $c8 i3wm.color8 #363F3F
+#set $bg #1b1918
+#set $fg #a8a19f
+set_from_resource $fg URxvt.foreground #660000
+set_from_resource $bg URxvt.background #006600
+set_from_resource $c0 URxvt.color0 #000066
+set_from_resource $c1 URxvt.color1 #66FF66
+set_from_resource $c2 URxvt.color2 #FF6666
+set_from_resource $c3 URxvt.color3 #6666FF
+set_from_resource $c4 URxvt.color4 #36363F
+set_from_resource $c5 URxvt.color5 #363F36
+set_from_resource $c6 URxvt.color6 #3F3636
+set_from_resource $c7 URxvt.color7 #3F3F36
 
 font pango: Sauce Code Pro 10
 
@@ -207,7 +208,7 @@ bindsym $mod+shift+i exec --no-startup-id "bash ~/.config/i3/i3resize up"
 bindsym $mod+shift+o exec --no-startup-id "bash ~/.config/i3/i3resize right"
 
 # menu keybinding
-bindsym $mod+d exec $HOME/bin/rofi_pywal.sh
+bindsym $mod+d exec $HOME/.config/rofi/launchers/type-2/launcher.sh
 
 # applications that are not installed will not start
 # you may see a wheel - hashtag out things you do not want
@@ -289,6 +290,7 @@ bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 #changing border style
 new_window normal 2
 new_float normal 2
+
 # Popups during fullscreen mode
 popup_during_fullscreen smart
 
@@ -302,8 +304,8 @@ font pango:Hack Nerd Mono 10
 # want it
 
 for_window [class="^.*"] border pixel 2
-gaps inner 8
-gaps outer 2
+gaps inner 2
+gaps outer 1
 
 # i3 Gaps expand contract
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -343,11 +345,62 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+# i3 Bar
+bar {
+        id right-bar
+        output DVI-0
+        status_command i3status --config ~/.config/i3/i3status.conf
+        tray_output primary
+        strip_workspace_numbers yes
+        workspace_min_width 30
+        colors {
+                background $bg
+                statusline $fg
+                separator $c1
+                focused_workspace $c3 $c3 $bg
+                active_workspace $c6 $c6 $bg
+                inactive_workspace $c6 $bg $c6
+                urgent_workspace $c1 $c1 $bg
+        }
+}
+
+bar {
+        id center-bar
+        output DisplayPort-0
+        tray_output none
+        strip_workspace_numbers yes
+        workspace_min_width 30
+        colors {
+                background $bg
+                statusline $fg
+                separator $c1
+                focused_workspace $c3 $c3 $bg
+                active_workspace $c6 $c6 $bg
+                inactive_workspace $c6 $bg $c6
+                urgent_workspace $c1 $c1 $bg
+        }
+}
+
+bar {
+        id left-bar
+        output HDMI-0
+        tray_output none
+        strip_workspace_numbers yes
+        workspace_min_width 30
+        colors {
+                background $bg
+                statusline $fg
+                separator $c1
+                focused_workspace $c3 $c3 $bg
+                active_workspace $c6 $c6 $bg
+                inactive_workspace $c6 $bg $c6
+                urgent_workspace $c1 $c1 $bg
+        
+        }
+}
+
 # i3 Compton
 exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
-
-# Polybar
-# exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
 
 # Windows decoration colors
 # class                     border  backgr. text    indica. childb.
@@ -356,5 +409,4 @@ client.focused_inactive     $c6     $bg     $fg     $c6     $c6
 client.unfocused            $c6     $bg     $fg     $c6     $c6
 client.urgent               $c2     $bg     $fg     $c2     $c2
 client.placeholder          $c5     $bg     $fg     $c5     $c5
-
 client.background           $c1
