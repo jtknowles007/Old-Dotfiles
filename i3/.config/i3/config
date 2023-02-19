@@ -17,8 +17,6 @@ set_from_resource $c5 URxvt.color5 #363F36
 set_from_resource $c6 URxvt.color6 #3F3636
 set_from_resource $c7 URxvt.color7 #3F3F36
 
-font pango: Sauce Code Pro 10
-
 # Define the $mod key
 set $mod Mod4 
 
@@ -84,10 +82,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+` move scratchpad
 
 # assign named windows to specific monitors
-for_window [title="xkcd_comic"] move container to output DVI-0
 
 # Reload i3 Configuration
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 in place (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -157,7 +154,6 @@ bindsym $mod+shift+h split h
 bindsym $mod+shift+v split v
 
 # enter fullscreen mode for the focused container
-# Super + F in archlabs is execute thunar
 bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
@@ -229,16 +225,15 @@ exec --no-startup-id dropbox start
 bindsym $mod+Return exec --no-startup-id $term; focus
 bindsym $mod+h exec --no-startup-id $term -e htop; focus
 bindsym $mod+m exec --no-startup-id $term -e cmus; focus
-bindsym $mod+n exec --no-startup-id $term -e neomutt; focus
 bindsym $mod+r exec --no-startup-id $term -e ranger; focus
 
 # Web Browsers
-bindsym $mod+c exec --no-startup-id google-chrome; focus
-bindsym $mod+f exec --no-startup-id firefox-esr; focus
+# bindsym $mod+c exec --no-startup-id google-chrome; focus
+bindsym $mod+f exec --no-startup-id /opt/firefox/./firefox; focus
 
 # File Managers
-bindsym $mod+control+c exec --no-startup-id caja --no-desktop --browser $HOME; focus
-bindsym $mod+control+t exec --no-startup-id thunar; focus
+bindsym $mod+t exec --no-startup-id thunar; focus
+bindsym $mod+n exec --no-startup-id nautilus; focus
 
 # Graphics
 bindsym $mod+g exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gimp-2.10 org.gimp.GIMP; focus
@@ -283,74 +278,33 @@ for_window [title="Win 10:"] floating enable
 # exec_always --no-startup-id $term -name scratchpad
 
 # Borders
+default_border pixel 1
+default_floating_border pixel 5
 # Border toggle
 hide_edge_borders none
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
-#changing border style
-new_window normal 2
-new_float normal 2
+# Gaps
+gaps inner 8px
+gaps outer 4px
 
 # Popups during fullscreen mode
 popup_during_fullscreen smart
 
 # Font for window titles
-font pango:Hack Nerd Mono 10
-
-# i3 Gaps
-# Settings for I3 next gap git
-# https://github.com/Airblader/i3/tree/gaps-next
-# delete or uncomment the following lines if you do not have it or do not
-# want it
-
-for_window [class="^.*"] border pixel 2
-gaps inner 2
-gaps outer 1
-
-# i3 Gaps expand contract
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+font pango:Cantarell Light 10
+# for_window [class="^.*"]
+title_align center
 
 # i3 Bar
 bar {
         id right-bar
         output DVI-0
-        status_command i3status --config ~/.config/i3/i3status.conf
-        tray_output primary
+        position top
+        font pango: JetBrainsMono Nerd Font 12
+        status_command i3blocks
+        separator_symbol ​
+        tray_output none
         strip_workspace_numbers yes
         workspace_min_width 30
         colors {
@@ -367,6 +321,7 @@ bar {
 bar {
         id center-bar
         output DisplayPort-0
+        position top
         tray_output none
         strip_workspace_numbers yes
         workspace_min_width 30
@@ -384,7 +339,8 @@ bar {
 bar {
         id left-bar
         output HDMI-0
-        tray_output none
+        position top
+        tray_output HDMI-0
         strip_workspace_numbers yes
         workspace_min_width 30
         colors {
@@ -399,14 +355,12 @@ bar {
         }
 }
 
-# i3 Compton
-exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 # Windows decoration colors
 # class                     border  backgr. text    indica. childb.
-client.focused              $c4     $bg     $fg     $c1     $c4
-client.focused_inactive     $c6     $bg     $fg     $c6     $c6
-client.unfocused            $c6     $bg     $fg     $c6     $c6
-client.urgent               $c2     $bg     $fg     $c2     $c2
-client.placeholder          $c5     $bg     $fg     $c5     $c5
-client.background           $c1
+client.focused              $c6     $bg     #c6     $c1     $c4
+client.focused_inactive     $bg     $bg     $fg     $c6     $c6
+client.unfocused            $bg     $bg     $fg     $c6     $c6
+client.urgent               $bg     $bg     $fg     $c2     $c2
+client.placeholder          $bg     $bg     $fg     $c5     $c5
+client.background           $bg
