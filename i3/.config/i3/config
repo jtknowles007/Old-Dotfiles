@@ -22,10 +22,10 @@ set $mod Mod4
 
 # Define the movements keys - variables
 focus_follows_mouse no
-set $up l
-set $down k
-set $left j
-set $right semicolon
+set $up k
+set $down j
+set $left h
+set $right l
 
 # Define other variables
 set $term urxvt
@@ -43,17 +43,22 @@ set $ws8 "8:8"
 set $ws9 "9:9"
 set $ws10 "10:0"
 
+# Define Monitors
+set $LefMon "DisplayPort-0"
+set $CntMon "DVI-D-0"
+set $RgtMon "DisplayPort-1"
+
 # Assign workspaces to different monitors
-workspace $ws1 output DVI-0
-workspace $ws2 output DisplayPort-0
-workspace $ws3 output DVI-0
-workspace $ws4 output DisplayPort-0
-workspace $ws5 output DVI-0
-workspace $ws6 output DisplayPort-0
-workspace $ws7 output DVI-0
-workspace $ws8 output DisplayPort-0
-workspace $ws9 output DVI-0
-workspace $ws10 output HDMI-0
+workspace $ws1 output $RgtMon
+workspace $ws2 output $CntMon
+workspace $ws3 output $RgtMon
+workspace $ws4 output $CntMon
+workspace $ws5 output $RgtMon
+workspace $ws6 output $CntMon
+workspace $ws7 output $RgtMon
+workspace $ws8 output $CntMon
+workspace $ws9 output $RgtMon
+workspace $ws10 output $LftMon
 
 
 # switch to workspace
@@ -103,7 +108,7 @@ floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
 # Floating window min and max sizes
-floating_minimum_size 75 x 50
+# floating_minimum_size 75 x 50
 floating_maximum_size 1920 x 980
 
 # change focus
@@ -148,10 +153,10 @@ for_window [urgent=latest] focus
 default_orientation horizontal
 
 # split in horizontal orientation
-bindsym $mod+shift+h split h
+# bindsym $mod+shift+h split h
 
 # split in vertical orientation
-bindsym $mod+shift+v split v
+# bindsym $mod+shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+shift+f fullscreen toggle
@@ -204,7 +209,7 @@ bindsym $mod+shift+i exec --no-startup-id "bash ~/.config/i3/i3resize up"
 bindsym $mod+shift+o exec --no-startup-id "bash ~/.config/i3/i3resize right"
 
 # menu keybinding
-bindsym $mod+d exec $HOME/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+d exec rofi -show drun
 
 # applications that are not installed will not start
 # you may see a wheel - hashtag out things you do not want
@@ -223,9 +228,6 @@ exec --no-startup-id dropbox start
 
 # terminals
 bindsym $mod+Return exec --no-startup-id $term; focus
-bindsym $mod+h exec --no-startup-id $term -e htop; focus
-bindsym $mod+m exec --no-startup-id $term -e cmus; focus
-bindsym $mod+r exec --no-startup-id $term -e ranger; focus
 
 # Web Browsers
 # bindsym $mod+c exec --no-startup-id google-chrome; focus
@@ -299,7 +301,7 @@ title_align center
 # i3 Bar
 bar {
         id right-bar
-        output DVI-0
+        output DisplayPort-1
         position top
         font pango: JetBrainsMono Nerd Font 12
         status_command i3blocks
@@ -320,8 +322,11 @@ bar {
 
 bar {
         id center-bar
-        output DisplayPort-0
+        output DVI-D-0
         position top
+        font pango: JetBrainsMono Nerd Font 12
+        status_command i3blocks -c ~/.config/i3blocks/config-center
+        separator_symbol ​
         tray_output none
         strip_workspace_numbers yes
         workspace_min_width 30
@@ -338,9 +343,9 @@ bar {
 
 bar {
         id left-bar
-        output HDMI-0
+        output DisplayPort-0
         position top
-        tray_output HDMI-0
+        tray_output DisplayPort-0
         strip_workspace_numbers yes
         workspace_min_width 30
         colors {
@@ -358,9 +363,9 @@ bar {
 
 # Windows decoration colors
 # class                     border  backgr. text    indica. childb.
-client.focused              $c6     $bg     #c6     $c1     $c4
-client.focused_inactive     $bg     $bg     $fg     $c6     $c6
+client.focused              $c3     $bg     $c3     $c1     $c4
+client.focused_inactive     $c6     $bg     $c6     $c6     $c6
 client.unfocused            $bg     $bg     $fg     $c6     $c6
-client.urgent               $bg     $bg     $fg     $c2     $c2
+client.urgent               $c1     $bg     $c1     $c2     $c2
 client.placeholder          $bg     $bg     $fg     $c5     $c5
 client.background           $bg
