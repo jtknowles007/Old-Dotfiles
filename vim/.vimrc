@@ -3,6 +3,7 @@ set noswapfile
 filetype on
 filetype plugin on
 filetype indent on
+set viminfofile=NONE
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "COLORS
