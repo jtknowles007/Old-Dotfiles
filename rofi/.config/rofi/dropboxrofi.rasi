@@ -1,0 +1,31 @@
+configuration {
+    show-icons: false;
+    font: "JetBrainsMono Nerd Font 10";
+}
+/* Themes located in /usr/local/share/rofi/themes */
+@theme "Atelierforest-Dark"
+
+window {
+    location: North East;
+    anchor: North East;
+    x-offset: -375;
+    y-offset: 30px;
+    width: 200px;
+    height: 225px;
+    padding: 10px;
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    cycle: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 5px;
+    margin: 2px;
+    padding: 2px;
+
+}
+

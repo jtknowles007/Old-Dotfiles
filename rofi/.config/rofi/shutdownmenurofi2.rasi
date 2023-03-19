@@ -1,0 +1,74 @@
+configuration {
+    show-icons: false;
+    font: "JetBrainsMono Nerd Font 12";
+}
+/* Themes located in /usr/local/share/rofi/themes */
+@theme "Atelierforest-Dark"
+
+window {
+    transparency: "real";
+    background-color: @background;
+    location: center;
+    anchor: center;
+    x-offset: 0px;
+    y-offset: 0px;
+    fullscreen: false;
+    width: 1000px;
+    height: 300px;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+mainbox {
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 10px;
+    border: 0px solid;
+    border-radius: 0px;
+    background-color: inherit;
+    children: ["listview"];
+}
+
+message {
+    border: 0px solid;
+}
+
+listview {
+    enabled: true;
+    lines: 6;
+    columns: 1;
+    cycle: true;
+    scrollbar: false;
+    layout: horizontal;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 5px;
+    border: 0px solid;
+    background-color: transparent;
+}
+
+element {
+    enabled: true;
+    spacing: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: 0px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    orientation: vertical;
+    children: ["element-text", "element-text2"];
+}
+
+
+element-text2 {
+    vertical-align: 0.5;
+}
+element.normal {}
+element.selected {}
+element-text {
+   vertical-align: 0.5;
+}
