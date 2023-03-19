@@ -1,0 +1,54 @@
+# General
+align=left
+separator_block_width=10
+color=#a8a19f
+markup=pango
+border_top=0
+border_left=0
+border_right=0
+border_bottom=2
+
+# Blocks
+[Firefox]
+full_text=<span foreground='#FF9500'>  </span>
+command=/opt/firefox/./firefox
+
+[MENU]
+full_text=<span background='#f22c40' foreground="black">  </span> Program Launcher
+border=#f22c40
+command=rofi -show drun
+
+[UPTIME]
+label=<span background='#5ab738' foreground="black">  </span>
+border=#5ab738
+command=~/.config/i3blocks/scripts/uptime.py
+interval=60
+
+[INET]
+label=<span background='#d5911a' foreground="black">  </span>
+border=#d5911a
+command=~/.config/i3blocks/scripts/inetconnect.py
+interval=60
+
+[WEATHER]
+label=<span background='#6666ea' foreground="black">  </span>
+border=#6666ea
+command=~/.config/i3blocks/scripts/dw.py
+interval=300
+
+[DATE]
+label=<span background='#00ad9c' foreground="black">  </span>
+border=#00ad9c
+command=date '+ %m/%d/%Y';if [ -z $BLOCK_BUTTON ]; then :; else exec gsimplecal; fi 
+interval=3600
+
+[TIME]
+label=<span background='#407ee7' foreground="black">  </span>
+border=#407ee7
+command=date '+ %r'
+interval=1
+
+[POWER]
+full_text=<span background='#766e6b' foreground='black'>  </span>
+border=#766e6b
+command= ~/.config/i3blocks/scripts/powermenu.sh

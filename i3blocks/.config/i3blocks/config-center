@@ -1,0 +1,25 @@
+# General
+align=left
+separator_block_width=10
+color=#a8a19f
+markup=pango
+border_top=0
+border_left=0
+border_right=0
+border_bottom=2
+
+# Blocks
+#[STOCKS]
+#label=<span background='#ffffff' foreground="black">  </span>
+#border=#ffffff
+#command= ~/.config/i3blocks/scripts/stockticker.py
+#interval=300
+#min_width="                                                        "
+
+[DROPBOX]
+label=<span background='#407ee7' foreground="black">  </span> 
+border=#407ee7
+command=dropbox status
+interval=60
+
+
