@@ -19,6 +19,7 @@ set_from_resource $c7 URxvt.color7 #3F3F36
 
 # Define the $mod key
 set $mod Mod4 
+set $mod1 Mod1
 
 # Define the movements keys - variables
 focus_follows_mouse no
@@ -213,6 +214,8 @@ bindsym $mod+d exec rofi -show drun
 
 # applications that are not installed will not start
 # you may see a wheel - hashtag out things you do not want
+# Wallpaper
+exec --no-startup-id nitrogen --restore
 #Authentication dialog
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 # network
@@ -225,6 +228,10 @@ exec --no-startup-id dropbox start
 ################################
 # Application keyboard shortcuts
 # ##############################
+
+# Shutdown Menu
+bindsym Control+$mod1+Delete exec /home/john/.config/i3blocks/scripts/powermenu.sh
+
 
 # terminals
 bindsym $mod+Return exec --no-startup-id $term; focus
