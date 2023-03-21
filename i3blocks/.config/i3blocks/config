@@ -51,4 +51,4 @@ interval=1
 [POWER]
 full_text=<span background='#766e6b' foreground='black'>  </span>
 border=#766e6b
-command= ~/.config/i3blocks/scripts/powermenu.sh
+command= ~/.local/bin/rofi-power-custom
