@@ -230,7 +230,7 @@ exec --no-startup-id dropbox start
 # ##############################
 
 # Shutdown Menu
-bindsym Control+$mod1+Delete exec /home/john/.config/i3blocks/scripts/powermenu.sh
+bindsym Control+$mod1+Delete exec /home/john/.local/bin/rofi-power-custom
 
 
 # terminals
