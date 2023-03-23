@@ -17,7 +17,7 @@ set_from_resource $c5 URxvt.color5 #363F36
 set_from_resource $c6 URxvt.color6 #3F3636
 set_from_resource $c7 URxvt.color7 #3F3F36
 
-# Define the $mod key
+# Define the $mod keys
 set $mod Mod4 
 set $mod1 Mod1
 
@@ -334,7 +334,7 @@ bar {
         font pango: JetBrainsMono Nerd Font 12
         status_command i3blocks -c ~/.config/i3blocks/config-center
         separator_symbol ​
-        tray_output DVI-D-0
+        tray_output $CntMon
         strip_workspace_numbers yes
         workspace_min_width 30
         colors {
