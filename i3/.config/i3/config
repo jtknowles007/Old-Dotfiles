@@ -334,7 +334,7 @@ bar {
         font pango: JetBrainsMono Nerd Font 12
         status_command i3blocks -c ~/.config/i3blocks/config-center
         separator_symbol ​
-        tray_output none
+        tray_output DVI-D-0
         strip_workspace_numbers yes
         workspace_min_width 30
         colors {
@@ -347,26 +347,6 @@ bar {
                 urgent_workspace $c1 $c1 $bg
         }
 }
-
-bar {
-        id left-bar
-        output DisplayPort-0
-        position top
-        tray_output DisplayPort-0
-        strip_workspace_numbers yes
-        workspace_min_width 30
-        colors {
-                background $bg
-                statusline $fg
-                separator $c1
-                focused_workspace $c3 $c3 $bg
-                active_workspace $c6 $c6 $bg
-                inactive_workspace $c6 $bg $c6
-                urgent_workspace $c1 $c1 $bg
-        
-        }
-}
-
 
 # Windows decoration colors
 # class                     border  backgr. text    indica. childb.
