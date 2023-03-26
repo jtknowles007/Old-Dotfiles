@@ -10,8 +10,8 @@ border_bottom=2
 
 # Blocks
 [Firefox]
-full_text=<span foreground='#FF9500'>  </span>
-command=/opt/firefox/./firefox
+full_text=<span font='Walter'>Disney+</span>
+command=/opt/firefox/./firefox --new-window https://www.disneyplus.com/home
 
 [MENU]
 full_text=<span background='#f22c40' foreground="black">  </span> Program Launcher
