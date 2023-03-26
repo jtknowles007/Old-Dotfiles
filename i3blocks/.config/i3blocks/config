@@ -10,7 +10,7 @@ border_bottom=2
 
 # Blocks
 [Firefox]
-full_text=<span font='Walter'>Disney+</span>
+full_text=<span background='#081E4C' font='Walter'> Disney+ </span>
 command=/opt/firefox/./firefox --new-window https://www.disneyplus.com/home
 
 [MENU]
