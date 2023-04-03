@@ -28,7 +28,6 @@ Plugin 'morhetz/gruvbox'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/indentpython.vim'
@@ -39,7 +38,6 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'https://github.com/junegunn/vim-github-dashboard.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plugin 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plugin End - All plugins must be included between Begin and End
 call vundle#end()
@@ -49,18 +47,6 @@ call vundle#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code Completion
 let g:kite_supported_languages = ['python', 'javascript']
-
-" NERDTree Menu
-let g:NERDTreeQuitOnOpen=1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsUnicodeDecorateFolderNodeDefaultSymbol = '#'
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['nerdtree'] = '#'
-
-autocmd vimenter * NERDTree
-autocmd vimenter * wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<CR>
 
 "SPACES TABS AND SPECIAL CHARACTERS
 set tabstop=4       " 4 space tab
