@@ -46,8 +46,7 @@ def getstocks():
             stockresult = stock(list)
 
             #output stock data in i3blocks format
-            #print("{}: {} {} {:+g}".format(stockresult[0],stockresult[1],stockresult[2],stockresult[3]), end=" ")
-            fulloutput = fulloutput + " " + str(stockresult[0]) + ": " + str(stockresult[1]) + " " + str(stockresult[2]) + " " + str(stockresult[3])
+            print("{}: {} {} {:+g}".format(stockresult[0],stockresult[1],stockresult[2],stockresult[3]))
 
             #output stock data to text file for off hours
             file.write("{}\t{}\t{:+g}\n".format(stockresult[0], \
@@ -61,7 +60,7 @@ def offhours():
             print("{}: {} {}" \
                   .format(stock_index["NAME"], \
                             stock_index["VALUE"], \
-                            stock_index["CHANGE"]), end=" ")
+                            stock_index["CHANGE"]))
 
 def main():
     date_now = datetime.datetime.now()
@@ -73,13 +72,11 @@ def main():
 
     # Weekday, Non-Holiday, between market open and close?
     # Run the current stocks.  Otherwise, display closing numbers
-#    if day_number <5 and date_now not in us_holidays and time_now >= \
-#       time_open and time_now <= time_close:
-#        getstocks()
-#    else:
-#        offhours()
-
-    print(getstocks())
+    if day_number <5 and date_now not in us_holidays and time_now >= \
+        time_open and time_now <= time_close:
+        getstocks()
+    else:
+        offhours()
 
 # if __name__ == "__main__":
 main()
