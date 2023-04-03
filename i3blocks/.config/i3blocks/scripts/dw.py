@@ -1,14 +1,19 @@
 #! /usr/bin/env python3
 
-import getjson as pm
+import requests
 from credentials import openweatherkey
 
 latitude = 40.1079
 longitude = -85.6782
-
-# Find local weather
-weatherurl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&lat={}&lon={}&appid={}".format(latitude,longitude,openweatherkey)
-weatherdata = pm.getjson(weatherurl)
+weatherurl = "https://api.openweathermap.org/data/2.5/weather"
+params = {
+    'units':'imperial',
+    'lat':latitude,
+    'lon':longitude,
+    'appid':openweatherkey
+}
+response = requests.get(weatherurl, params=params)
+weatherdata = response.json()
 current = round(weatherdata['main']['temp'],1)
 symbol = "°F"
 condition = weatherdata['weather'][0]['description']
