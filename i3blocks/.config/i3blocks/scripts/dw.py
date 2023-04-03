@@ -19,10 +19,15 @@ def getcurrentweather(theurl,theunits,thelat,thelong,thekey):
     try:
         response = requests.get(theurl, params=params)
     except:
-        print("Error Occurred")
+        print("HTTP Error")
         return
 
-    weatherdata = response.json()
+    try:
+        weatherdata = response.json()
+    except:
+        print("JSON Error")
+        return
+
     current = round(weatherdata['main']['temp'],1)
     symbol = "°F"
     icon = weatherdata['weather'][0]['icon']
