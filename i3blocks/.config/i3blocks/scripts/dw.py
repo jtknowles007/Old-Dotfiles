@@ -12,11 +12,19 @@ params = {
     'lon':longitude,
     'appid':openweatherkey
 }
-response = requests.get(weatherurl, params=params)
+
+try:
+    response = requests.get(weatherurl, params=params)
+except requests.exceptions.Timeout:
+    print("Time Out")
+except requests.exceptions.TooManyRedirects:
+    print("Too Many Redirects")
+except requests.exceptions.RequestException:
+    print("Error Occured")
+
 weatherdata = response.json()
 current = round(weatherdata['main']['temp'],1)
 symbol = "°F"
-condition = weatherdata['weather'][0]['description']
 icon = weatherdata['weather'][0]['icon']
 icondefault = ""
 icondict = {
