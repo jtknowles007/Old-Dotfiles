@@ -31,7 +31,7 @@ def getcurrentweather(theurl,theunits,thelat,thelong,thekey):
     current = round(weatherdata['main']['temp'],1)
     symbol = "°F"
     icon = weatherdata['weather'][0]['icon']
-    icondefault = ""
+    icondefault = ""
     icondict = {
         "01d":"",
         "01n":"",
