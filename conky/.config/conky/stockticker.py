@@ -46,7 +46,7 @@ def getstocks():
             stockresult = stock(list)
 
             #output stock data for conky
-            print("{}: {} {}{:+g}".format(stockresult[0],stockresult[1],stockresult[2],stockresult[3]))
+            print("{}:${{goto 160}}{}${{goto 245}}{}{:+g}".format(stockresult[0],stockresult[1],stockresult[2],stockresult[3]))
 
             #output stock data to text file for off hours
             file.write("{}\t{}\t{:+g}\n".format(stockresult[0], \
@@ -54,10 +54,10 @@ def getstocks():
         file.close
         return fulloutput
 def offhours():
-    with open("/home/john/Dotfiles/conky/.config/conky/scripts/output.txt", "r") as stocks:
+    with open("/home/john/Dotfiles/conky/.config/conky/output.txt", "r") as stocks:
         tsv_reader = csv.DictReader(stocks, delimiter="\t")
         for stock_index in tsv_reader:
-            print("{}: {} {}" \
+            print("{}:${{goto 160}}{}${{goto 245}}{}" \
                   .format(stock_index["NAME"], \
                             stock_index["VALUE"], \
                             stock_index["CHANGE"]))
