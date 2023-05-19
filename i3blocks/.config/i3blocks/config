@@ -45,7 +45,7 @@ interval=3600
 [TIME]
 label=<span background='#407ee7' foreground="black">  </span>
 border=#407ee7
-command=date '+ %r'
+command=date '+ %X'
 interval=1
 
 [POWER]
