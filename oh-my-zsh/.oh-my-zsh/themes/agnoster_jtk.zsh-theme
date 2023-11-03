@@ -3,7 +3,7 @@
 # A Powerline-inspired theme for ZSH
 #
 # # README
-#
+# # Test
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
 
