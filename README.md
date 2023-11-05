@@ -1,9 +1,9 @@
 Dotfiles
 ==========
-This is my personal dotfiles repository.  The method I'm currently using requires the use of [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/).  Instructions for installing:
+This is my old personal dotfiles repository.  The method I'm currently using requires the use of [git](https://git-scm.com/) and [GNU stow](https://www.gnu.org/software/stow/).  Instructions for installing:
 
 ```bash
-$ git clone https://github.com/jtknowles007/dotfiles.git ~/Dotfiles
+$ git clone https://github.com/jtknowles007/old-dotfiles.git ~/Dotfiles
 $ cd ~/Dotfiles
 $ stow i3 polybar zsh (etc.)
 ```
